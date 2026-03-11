@@ -2,173 +2,347 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { Search, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-const navLinks = [
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
+const mainNav = [
+  { label: "Platform", href: "/platform" },
+  { label: "Intelligence Layers", href: "/intelligence-layers/lease" },
+  { label: "For Providers", href: "/for-providers/director-homeownership" },
+  { label: "Insights", href: "/insights" },
+  { label: "Company", href: "/company/about" },
+];
+
+const insightCards = [
   {
-    label: "Platform",
-    href: "/platform",
-    children: [
-      { label: "Overview", href: "/platform" },
-      { label: "Lifecycle Model", href: "/platform/lifecycle" },
-      { label: "Data Infrastructure", href: "/platform/data-infrastructure" },
-      { label: "AI Governance & Security", href: "/platform/ai-governance" },
-      { label: "Integrations", href: "/platform/integrations" },
-    ],
+    date: "March 2026",
+    title: "Staircasing Completion Rates: 2025 National Analysis",
+    href: "/insights/intelligence-index",
   },
   {
-    label: "Intelligence Layers",
-    href: "/intelligence-layers",
-    children: [
-      { label: "Lease Intelligence", href: "/intelligence-layers/lease" },
-      { label: "Sales Intelligence", href: "/intelligence-layers/sales" },
-      { label: "Aftersales & Staircasing", href: "/intelligence-layers/aftersales" },
-      { label: "Rent & Service Charge", href: "/intelligence-layers/rent-service-charge" },
-      { label: "Portfolio Intelligence", href: "/intelligence-layers/portfolio" },
-    ],
-  },
-  {
-    label: "For Providers",
-    href: "/for-providers",
-    children: [
-      { label: "Director of Homeownership", href: "/for-providers/director-homeownership" },
-      { label: "Head of Sales", href: "/for-providers/head-of-sales" },
-      { label: "Head of Aftersales", href: "/for-providers/head-of-aftersales" },
-      { label: "Finance Director", href: "/for-providers/finance-director" },
-      { label: "CIO", href: "/for-providers/cio" },
-    ],
-  },
-  {
-    label: "Insights",
-    href: "/insights",
-    children: [
-      { label: "Intelligence Index", href: "/insights/intelligence-index" },
-      { label: "AI in Housing", href: "/insights/ai-in-housing" },
-      { label: "Regulatory Briefings", href: "/insights/regulatory-briefings" },
-      { label: "Sector Reports", href: "/insights/sector-reports" },
-      { label: "Roundtable Findings", href: "/insights/roundtable-findings" },
-    ],
-  },
-  {
-    label: "Company",
-    href: "/company/about",
-    children: [
-      { label: "About Stairpay", href: "/company/about" },
-      { label: "Leadership", href: "/company/leadership" },
-      { label: "Customers", href: "/company/customers" },
-      { label: "Security & Compliance", href: "/company/security" },
-      { label: "Careers", href: "/company/careers" },
-    ],
+    date: "February 2026",
+    title: "AI Governance in Regulated Housing: What the Standards Require",
+    href: "/insights/ai-in-housing",
   },
 ];
 
-export function GlobalNav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+const featuredCard = {
+  eyebrow: "Annual Report",
+  title: "The 2026 Shared Ownership Intelligence Index",
+  href: "/insights/intelligence-index",
+};
 
+const quickLinks = [
+  { label: "About", href: "/company/about" },
+  { label: "Leadership", href: "/company/leadership" },
+  { label: "Customers", href: "/company/customers" },
+  { label: "Security", href: "/company/security" },
+  { label: "Careers", href: "/company/careers" },
+  { label: "Contact", href: "/contact" },
+];
+
+// ─── Animation variants ───────────────────────────────────────────────────────
+
+
+const overlayVariants: Variants = {
+  hidden:  { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.25 } },
+  exit:    { opacity: 0, transition: { duration: 0.2  } },
+};
+
+const navListVariants: Variants = {
+  hidden:  {},
+  visible: { transition: { staggerChildren: 0.055, delayChildren: 0.12 } },
+  exit:    { transition: { staggerChildren: 0.03  } },
+};
+
+const navItemVariants: Variants = {
+  hidden:  { opacity: 0, x: -18 },
+  visible: { opacity: 1, x:   0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
+  exit:    { opacity: 0, x: -10, transition: { duration: 0.15 } },
+};
+
+const colVariants: Variants = {
+  hidden:  { opacity: 0, y: 14 },
+  visible: { opacity: 1, y:  0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
+  exit:    { opacity: 0,        transition: { duration: 0.15 } },
+};
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
+export function GlobalNav() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Detect scroll so bar can subtly increase opacity
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when overlay is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  // Escape key to close
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const close = () => setOpen(false);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[250ms] ${
-        scrolled
-          ? "bg-[var(--color-bg-secondary)]/95 backdrop-blur-sm shadow-[0_1px_0_var(--color-border-dark)]"
-          : "bg-[var(--color-bg-secondary)]/80 backdrop-blur-sm"
-      }`}
-    >
-      <div className="max-w-[1200px] mx-auto px-10">
-        <div className="flex items-center justify-between h-16">
+    <>
+      {/* ── Floating bar ── always on top ─────────────────────────────────── */}
+      <header
+        className={`fixed top-3 left-3 right-3 z-[100] rounded-[4px] border transition-all duration-[250ms] ${
+          open
+            ? "bg-[rgba(10,5,21,1)] border-[var(--color-border-dark)] shadow-none"
+            : scrolled
+            ? "bg-[rgba(10,5,21,0.96)] border-[var(--color-border-dark)] shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
+            : "bg-[rgba(10,5,21,0.78)] border-[rgba(46,26,82,0.55)] shadow-[0_2px_12px_rgba(0,0,0,0.25)]"
+        }`}
+        style={{ backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)" }}
+      >
+        <div className="flex items-center justify-between h-[52px] px-5">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-white font-[500] text-[18px] tracking-[-0.3px]">
-              Stairpay
-            </span>
+          <Link
+            href="/"
+            onClick={close}
+            className="text-white font-[600] text-[18px] tracking-[-0.5px] hover:opacity-75 transition-opacity duration-[150ms]"
+          >
+            Stairpay
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <div
-                key={link.label}
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(link.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button className="text-[13px] font-[400] tracking-[0.5px] text-[var(--color-text-secondary)] hover:text-white transition-colors duration-[150ms] py-2">
-                  {link.label}
-                </button>
+          {/* Right controls */}
+          <div className="flex items-center gap-2">
+            {/* CTA — hidden on very small screens */}
+            <div className="hidden sm:block">
+              <Button href="/contact" size="sm" onClick={close}>
+                Book a Strategic Review
+              </Button>
+            </div>
 
-                {/* Dropdown */}
-                {activeDropdown === link.label && link.children && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-56">
-                    <div className="bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] rounded-[8px] py-2 shadow-xl">
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block px-4 py-2.5 text-[13px] font-[300] text-[var(--color-text-secondary)] hover:text-white hover:bg-[var(--color-bg-card-dark-hover)] transition-colors duration-[150ms]"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+            {/* Search */}
+            <button
+              className="p-2 text-[var(--color-text-muted)] hover:text-white transition-colors duration-[150ms]"
+              aria-label="Search"
+            >
+              <Search size={16} strokeWidth={1.5} />
+            </button>
+
+            {/* Hamburger / X */}
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="p-2 text-[var(--color-text-secondary)] hover:text-white transition-colors duration-[150ms]"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {open ? (
+                  <motion.span
+                    key="x"
+                    initial={{ rotate: -45, opacity: 0 }}
+                    animate={{ rotate: 0,   opacity: 1 }}
+                    exit={{   rotate:  45, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="block"
+                  >
+                    <X size={18} strokeWidth={1.5} />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="menu"
+                    initial={{ rotate: 45,  opacity: 0 }}
+                    animate={{ rotate: 0,   opacity: 1 }}
+                    exit={{   rotate: -45, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="block"
+                  >
+                    <Menu size={18} strokeWidth={1.5} />
+                  </motion.span>
                 )}
-              </div>
-            ))}
-          </nav>
-
-          {/* CTA */}
-          <div className="hidden lg:block">
-            <Button href="/contact" size="sm">
-              Book a Strategic Review
-            </Button>
+              </AnimatePresence>
+            </button>
           </div>
-
-          {/* Mobile menu toggle */}
-          <button
-            className="lg:hidden text-[var(--color-text-secondary)] hover:text-white transition-colors"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile nav */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-[var(--color-bg-secondary)] border-t border-[var(--color-border-dark)] px-10 py-6 space-y-4">
-          {navLinks.map((link) => (
-            <div key={link.label}>
-              <p className="text-[11px] font-[500] tracking-[2px] uppercase text-[var(--color-text-muted)] mb-2">
-                {link.label}
-              </p>
-              {link.children?.map((child) => (
-                <Link
-                  key={child.href}
-                  href={child.href}
-                  className="block py-1.5 text-[14px] font-[300] text-[var(--color-text-secondary)] hover:text-white transition-colors"
-                  onClick={() => setMobileOpen(false)}
+      {/* ── Full-screen overlay ────────────────────────────────────────────── */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="nav-overlay"
+            variants={overlayVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-0 z-[90] bg-[var(--color-bg-primary)] flex flex-col overflow-y-auto"
+          >
+            {/* Spacer — clears the floating bar */}
+            <div className="h-[76px] flex-shrink-0" />
+
+            {/* ── Main grid ───────────────────────────────────────────────── */}
+            <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr_0.9fr] border-t border-[var(--color-border-dark)]">
+
+              {/* LEFT — Navigation */}
+              <div className="px-10 md:px-14 py-12 lg:border-r border-[var(--color-border-dark)]">
+                <p className="text-eyebrow text-[var(--color-text-muted)] mb-10">
+                  Navigation
+                </p>
+
+                <motion.nav
+                  variants={navListVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="space-y-1"
                 >
-                  {child.label}
+                  {mainNav.map((item) => (
+                    <motion.div key={item.label} variants={navItemVariants}>
+                      <Link
+                        href={item.href}
+                        onClick={close}
+                        className="group flex items-center gap-4 py-3 text-[28px] md:text-[32px] font-[400] text-[var(--color-text-secondary)] hover:text-white transition-colors duration-[150ms] leading-none"
+                      >
+                        <span
+                          className="text-[16px] font-[300] text-[var(--color-accent)] opacity-50 group-hover:opacity-100 transition-opacity duration-[150ms] select-none"
+                          aria-hidden="true"
+                        >
+                          ↳
+                        </span>
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </motion.nav>
+              </div>
+
+              {/* MIDDLE — Latest Insights */}
+              <motion.div
+                variants={colVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={{ delay: 0.18 }}
+                className="px-10 md:px-12 py-12 lg:border-r border-[var(--color-border-dark)] border-t lg:border-t-0"
+              >
+                <div className="flex items-center justify-between mb-10">
+                  <p className="text-eyebrow text-[var(--color-text-muted)]">
+                    Latest Insights
+                  </p>
+                  <Link
+                    href="/insights"
+                    onClick={close}
+                    className="flex items-center gap-1.5 text-[11px] font-[500] tracking-[1.5px] uppercase text-[var(--color-accent)] hover:text-white transition-colors duration-[150ms] group"
+                  >
+                    View All
+                    <ArrowRight
+                      size={11}
+                      strokeWidth={2}
+                      className="group-hover:translate-x-0.5 transition-transform duration-[150ms]"
+                    />
+                  </Link>
+                </div>
+
+                <div className="space-y-7">
+                  {insightCards.map((card) => (
+                    <Link
+                      key={card.href}
+                      href={card.href}
+                      onClick={close}
+                      className="group block"
+                    >
+                      {/* Thumbnail placeholder */}
+                      <div className="w-full aspect-[16/7] rounded-[6px] bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] mb-3 overflow-hidden group-hover:border-[var(--color-accent)] transition-colors duration-[200ms]">
+                        <div className="w-full h-full bg-gradient-to-br from-[rgba(113,20,226,0.08)] to-transparent" />
+                      </div>
+                      <p className="text-eyebrow text-[var(--color-text-muted)] mb-1.5">
+                        {card.date}
+                      </p>
+                      <p className="text-[14px] font-[300] leading-snug text-[var(--color-text-secondary)] group-hover:text-white transition-colors duration-[150ms]">
+                        {card.title}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* RIGHT — Featured */}
+              <motion.div
+                variants={colVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={{ delay: 0.24 }}
+                className="px-10 md:px-12 py-12 border-t lg:border-t-0"
+              >
+                <p className="text-eyebrow text-[var(--color-text-muted)] mb-10">
+                  Latest from Stairpay
+                </p>
+
+                <Link
+                  href={featuredCard.href}
+                  onClick={close}
+                  className="group block"
+                >
+                  {/* Featured image placeholder */}
+                  <div className="w-full aspect-[4/3] rounded-[8px] bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] mb-4 overflow-hidden group-hover:border-[var(--color-accent)] transition-colors duration-[200ms]">
+                    <div className="w-full h-full bg-gradient-to-br from-[rgba(113,20,226,0.12)] via-[rgba(113,20,226,0.04)] to-transparent" />
+                  </div>
+                  <p className="text-eyebrow text-[var(--color-accent)] mb-2">
+                    {featuredCard.eyebrow}
+                  </p>
+                  <p className="text-[16px] font-[400] leading-snug text-[var(--color-text-secondary)] group-hover:text-white transition-colors duration-[150ms]">
+                    {featuredCard.title}
+                  </p>
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* ── Quick links row ──────────────────────────────────────────── */}
+            <motion.div
+              variants={colVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ delay: 0.28 }}
+              className="border-t border-[var(--color-border-dark)] px-10 md:px-14 py-5 flex flex-wrap items-center gap-x-8 gap-y-3"
+            >
+              <span className="text-eyebrow text-[var(--color-text-muted)] mr-2">
+                Quick Links
+              </span>
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={close}
+                  className="text-[13px] font-[300] text-[var(--color-text-muted)] hover:text-white transition-colors duration-[150ms]"
+                >
+                  {link.label}
                 </Link>
               ))}
-            </div>
-          ))}
-          <div className="pt-4">
-            <Button href="/contact" size="sm" className="w-full justify-center">
-              Book a Strategic Review
-            </Button>
-          </div>
-        </div>
-      )}
-    </header>
+
+              {/* CTA in quick links row on mobile (where bar CTA is hidden) */}
+              <div className="sm:hidden ml-auto">
+                <Button href="/contact" size="sm" onClick={close}>
+                  Book a Strategic Review
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

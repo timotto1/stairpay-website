@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <rect width="800" height="400" fill="#0A0515"/>
+  <!-- Dashboard chrome -->
+  <rect x="20" y="15" width="760" height="370" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="20" y="15" width="760" height="35" rx="8" fill="#130929"/>
+  <rect x="20" y="42" width="760" height="8" fill="#130929"/>
+  <circle cx="42" cy="32" r="5" fill="#7114E2" fill-opacity="0.4"/>
+  <circle cx="58" cy="32" r="5" fill="#E5DAFB" fill-opacity="0.15"/>
+  <circle cx="74" cy="32" r="5" fill="#E5DAFB" fill-opacity="0.15"/>
+  <text x="400" y="37" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.6">Rent &amp; Service Charge Dashboard</text>
+  <line x1="20" y1="50" x2="780" y2="50" stroke="#7114E2" stroke-width="0.5" stroke-opacity="0.3"/>
+  <!-- Top metrics row -->
+  <rect x="40" y="60" width="170" height="55" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="55" y="80" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">TOTAL RENT ROLL</text>
+  <text x="55" y="103" font-family="Poppins, sans-serif" font-size="22" fill="#E5DAFB" font-weight="600">£3.2M</text>
+  <rect x="225" y="60" width="170" height="55" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="240" y="80" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">COLLECTION RATE</text>
+  <text x="240" y="103" font-family="Poppins, sans-serif" font-size="22" fill="#E5DAFB" font-weight="600">98.4%</text>
+  <rect x="410" y="60" width="170" height="55" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="425" y="80" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">REVIEWS DUE</text>
+  <text x="425" y="103" font-family="Poppins, sans-serif" font-size="22" fill="#E5DAFB" font-weight="600">142</text>
+  <rect x="595" y="60" width="165" height="55" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="610" y="80" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">SC RECONCILIATION</text>
+  <text x="610" y="103" font-family="Poppins, sans-serif" font-size="22" fill="#22c55e" font-weight="600">94%</text>
+  <!-- Rent setting grid -->
+  <rect x="40" y="130" width="350" height="240" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="60" y="155" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">RENT SETTING GRID</text>
+  <!-- Grid headers -->
+  <text x="60" y="178" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Development</text>
+  <text x="195" y="178" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Current</text>
+  <text x="260" y="178" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Proposed</text>
+  <text x="330" y="178" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Status</text>
+  <line x1="55" y1="184" x2="375" y2="184" stroke="#7114E2" stroke-width="0.5" stroke-opacity="0.2"/>
+  <!-- Grid rows -->
+  <text x="60" y="202" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Riverside Gate</text>
+  <text x="195" y="202" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.6">£485</text>
+  <text x="260" y="202" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">£498</text>
+  <circle cx="340" cy="198" r="4" fill="#22c55e" fill-opacity="0.7"/>
+  <text x="350" y="202" font-family="Poppins, sans-serif" font-size="8" fill="#22c55e" fill-opacity="0.7">Set</text>
+  <line x1="55" y1="210" x2="375" y2="210" stroke="#E5DAFB" stroke-width="0.3" stroke-opacity="0.1"/>
+  <text x="60" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Cedar Park</text>
+  <text x="195" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.6">£520</text>
+  <text x="260" y="228" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">£534</text>
+  <circle cx="340" cy="224" r="4" fill="#22c55e" fill-opacity="0.7"/>
+  <text x="350" y="228" font-family="Poppins, sans-serif" font-size="8" fill="#22c55e" fill-opacity="0.7">Set</text>
+  <line x1="55" y1="236" x2="375" y2="236" stroke="#E5DAFB" stroke-width="0.3" stroke-opacity="0.1"/>
+  <text x="60" y="254" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Harbour View</text>
+  <text x="195" y="254" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.6">£612</text>
+  <text x="260" y="254" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">£629</text>
+  <circle cx="340" cy="250" r="4" fill="#f59e0b" fill-opacity="0.7"/>
+  <text x="350" y="254" font-family="Poppins, sans-serif" font-size="8" fill="#f59e0b" fill-opacity="0.7">Pending</text>
+  <line x1="55" y1="262" x2="375" y2="262" stroke="#E5DAFB" stroke-width="0.3" stroke-opacity="0.1"/>
+  <text x="60" y="280" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Kings Quarter</text>
+  <text x="195" y="280" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.6">£445</text>
+  <text x="260" y="280" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">£457</text>
+  <circle cx="340" cy="276" r="4" fill="#f59e0b" fill-opacity="0.7"/>
+  <text x="350" y="280" font-family="Poppins, sans-serif" font-size="8" fill="#f59e0b" fill-opacity="0.7">Pending</text>
+  <line x1="55" y1="288" x2="375" y2="288" stroke="#E5DAFB" stroke-width="0.3" stroke-opacity="0.1"/>
+  <text x="60" y="306" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Elm Gardens</text>
+  <text x="195" y="306" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.6">£390</text>
+  <text x="260" y="306" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">—</text>
+  <circle cx="340" cy="302" r="4" fill="#E5DAFB" fill-opacity="0.3"/>
+  <text x="350" y="306" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Not started</text>
+  <!-- Reconciliation status -->
+  <rect x="410" y="130" width="350" height="110" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="430" y="155" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">RECONCILIATION STATUS</text>
+  <!-- Status indicators -->
+  <rect x="430" y="168" width="60" height="24" rx="4" fill="#22c55e" fill-opacity="0.15"/>
+  <text x="460" y="184" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">Done 38</text>
+  <rect x="500" y="168" width="80" height="24" rx="4" fill="#f59e0b" fill-opacity="0.15"/>
+  <text x="540" y="184" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#f59e0b">In Progress 12</text>
+  <rect x="590" y="168" width="70" height="24" rx="4" fill="#E5DAFB" fill-opacity="0.08"/>
+  <text x="625" y="184" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Pending 4</text>
+  <!-- Progress bar -->
+  <rect x="430" y="205" width="310" height="8" rx="4" fill="#E5DAFB" fill-opacity="0.08"/>
+  <rect x="430" y="205" width="218" height="8" rx="4" fill="#22c55e" fill-opacity="0.5"/>
+  <rect x="430" y="205" width="285" height="8" rx="4" fill="#f59e0b" fill-opacity="0.3"/>
+  <rect x="430" y="205" width="218" height="8" rx="4" fill="#22c55e" fill-opacity="0.5"/>
+  <text x="430" y="228" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">70% complete — 4 developments awaiting actuals</text>
+  <!-- Income forecast line chart -->
+  <rect x="410" y="250" width="350" height="120" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="430" y="275" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">INCOME FORECAST</text>
+  <!-- Axis -->
+  <line x1="440" y1="340" x2="740" y2="340" stroke="#E5DAFB" stroke-width="0.5" stroke-opacity="0.2"/>
+  <line x1="440" y1="290" x2="440" y2="340" stroke="#E5DAFB" stroke-width="0.5" stroke-opacity="0.2"/>
+  <!-- Forecast line -->
+  <polyline points="440,330 480,325 520,318 560,312 600,308 640,300 680,295 720,288" fill="none" stroke="#7114E2" stroke-width="2"/>
+  <!-- Actual line -->
+  <polyline points="440,332 480,328 520,320 560,316" fill="none" stroke="#E5DAFB" stroke-width="1.5" stroke-opacity="0.5"/>
+  <!-- Data points -->
+  <circle cx="440" cy="330" r="3" fill="#7114E2"/>
+  <circle cx="520" cy="318" r="3" fill="#7114E2"/>
+  <circle cx="600" cy="308" r="3" fill="#7114E2"/>
+  <circle cx="680" cy="295" r="3" fill="#7114E2"/>
+  <!-- Projected area -->
+  <polygon points="560,312 600,308 640,300 680,295 720,288 720,340 560,340" fill="#7114E2" fill-opacity="0.08"/>
+  <!-- Labels -->
+  <text x="450" y="355" font-family="Poppins, sans-serif" font-size="7" fill="#E5DAFB" fill-opacity="0.3">Apr</text>
+  <text x="530" y="355" font-family="Poppins, sans-serif" font-size="7" fill="#E5DAFB" fill-opacity="0.3">Jul</text>
+  <text x="610" y="355" font-family="Poppins, sans-serif" font-size="7" fill="#E5DAFB" fill-opacity="0.3">Oct</text>
+  <text x="690" y="355" font-family="Poppins, sans-serif" font-size="7" fill="#E5DAFB" fill-opacity="0.3">Jan</text>
+  <!-- Legend -->
+  <line x1="580" y1="270" x2="595" y2="270" stroke="#7114E2" stroke-width="2"/>
+  <text x="600" y="274" font-family="Poppins, sans-serif" font-size="7" fill="#E5DAFB" fill-opacity="0.5">Forecast</text>
+  <line x1="650" y1="270" x2="665" y2="270" stroke="#E5DAFB" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="670" y="274" font-family="Poppins, sans-serif" font-size="7" fill="#E5DAFB" fill-opacity="0.5">Actual</text>
+</svg>

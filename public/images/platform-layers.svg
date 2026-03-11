@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <filter id="pl-glow">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <marker id="pl-arrow-up" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
+      <path d="M0,6 L4,0 L8,6" fill="none" stroke="#7114E2" stroke-width="1"/>
+    </marker>
+    <marker id="pl-arrow-down" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
+      <path d="M0,0 L4,6 L8,0" fill="none" stroke="#7114E2" stroke-width="1"/>
+    </marker>
+  </defs>
+  <rect width="800" height="450" fill="#0A0515"/>
+  <!-- Subtle glow -->
+  <ellipse cx="400" cy="225" rx="250" ry="120" fill="#7114E2" fill-opacity="0.04" filter="url(#pl-glow)"/>
+  <!-- Layer 1: Intelligence Layers (top) -->
+  <rect x="60" y="30" width="680" height="120" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="400" y="55" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#7114E2" font-weight="600" letter-spacing="1">INTELLIGENCE LAYERS</text>
+  <!-- 5 module boxes -->
+  <rect x="80" y="70" width="115" height="60" rx="4" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="137" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Lease</text>
+  <text x="137" y="112" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Extraction</text>
+  <rect x="210" y="70" width="115" height="60" rx="4" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="267" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Sales</text>
+  <text x="267" y="112" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Intelligence</text>
+  <rect x="340" y="70" width="115" height="60" rx="4" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="397" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Staircasing</text>
+  <text x="397" y="112" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Analytics</text>
+  <rect x="470" y="70" width="115" height="60" rx="4" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="527" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Rent &amp; SC</text>
+  <text x="527" y="112" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Engine</text>
+  <rect x="600" y="70" width="120" height="60" rx="4" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="660" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Portfolio</text>
+  <text x="660" y="112" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB">Reporting</text>
+  <!-- Connection lines Layer 1 to Layer 2 -->
+  <line x1="250" y1="150" x2="250" y2="190" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+  <line x1="400" y1="150" x2="400" y2="190" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+  <line x1="550" y1="150" x2="550" y2="190" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+  <!-- Bidirectional arrows -->
+  <line x1="320" y1="150" x2="320" y2="190" stroke="#7114E2" stroke-width="1" stroke-opacity="0.6" marker-start="url(#pl-arrow-up)" marker-end="url(#pl-arrow-down)"/>
+  <line x1="480" y1="150" x2="480" y2="190" stroke="#7114E2" stroke-width="1" stroke-opacity="0.6" marker-start="url(#pl-arrow-up)" marker-end="url(#pl-arrow-down)"/>
+  <!-- Layer 2: Data Infrastructure (middle) -->
+  <rect x="60" y="190" width="680" height="90" rx="8" fill="#130929" stroke="#7114E2" stroke-width="2"/>
+  <rect x="60" y="190" width="680" height="90" rx="8" fill="#7114E2" fill-opacity="0.05"/>
+  <text x="400" y="225" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" fill="#E5DAFB" font-weight="600">Shared Ownership Data Infrastructure</text>
+  <text x="400" y="248" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5">Unified data model  |  Event processing  |  API layer  |  Security &amp; governance</text>
+  <text x="400" y="266" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5">Lease repository  |  Financial engine  |  Workflow orchestration</text>
+  <!-- Connection lines Layer 2 to Layer 3 -->
+  <line x1="250" y1="280" x2="250" y2="320" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+  <line x1="400" y1="280" x2="400" y2="320" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+  <line x1="550" y1="280" x2="550" y2="320" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+  <line x1="320" y1="280" x2="320" y2="320" stroke="#7114E2" stroke-width="1" stroke-opacity="0.6" marker-start="url(#pl-arrow-up)" marker-end="url(#pl-arrow-down)"/>
+  <line x1="480" y1="280" x2="480" y2="320" stroke="#7114E2" stroke-width="1" stroke-opacity="0.6" marker-start="url(#pl-arrow-up)" marker-end="url(#pl-arrow-down)"/>
+  <!-- Layer 3: Existing Systems (bottom) -->
+  <rect x="60" y="320" width="680" height="100" rx="8" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="400" y="348" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" fill-opacity="0.6" letter-spacing="1">EXISTING SYSTEMS</text>
+  <!-- System boxes -->
+  <rect x="80" y="362" width="100" height="44" rx="4" fill="#0A0515" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="130" y="388" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5">HMS</text>
+  <rect x="200" y="362" width="100" height="44" rx="4" fill="#0A0515" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="250" y="388" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5">CRM</text>
+  <rect x="320" y="362" width="100" height="44" rx="4" fill="#0A0515" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="370" y="388" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5">Finance</text>
+  <rect x="440" y="362" width="100" height="44" rx="4" fill="#0A0515" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="490" y="388" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5">DMS</text>
+  <rect x="560" y="362" width="100" height="44" rx="4" fill="#0A0515" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="610" y="388" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5">Portals</text>
+</svg>

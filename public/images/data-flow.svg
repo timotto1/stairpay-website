@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="900" height="350">
+  <defs>
+    <filter id="df-glow">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <marker id="df-arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7" fill="none" stroke="#7114E2" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <rect width="900" height="350" fill="#0A0515"/>
+  <!-- Left section: Scattered inputs -->
+  <text x="120" y="30" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="2">INPUTS</text>
+  <!-- PDF icon -->
+  <rect x="30" y="55" width="70" height="85" rx="4" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <polygon points="75,55 100,80 100,55" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="40" y="80" width="40" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <rect x="40" y="88" width="50" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <rect x="40" y="96" width="35" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <rect x="40" y="104" width="45" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <text x="65" y="130" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">PDF</text>
+  <!-- Lease document -->
+  <rect x="120" y="50" width="70" height="85" rx="4" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="130" y="65" width="50" height="3" rx="1" fill="#7114E2" fill-opacity="0.4"/>
+  <rect x="130" y="73" width="40" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <rect x="130" y="81" width="50" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <rect x="130" y="89" width="35" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <rect x="130" y="97" width="45" height="3" rx="1" fill="#E5DAFB" fill-opacity="0.2"/>
+  <text x="155" y="130" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">Leases</text>
+  <!-- CRM box -->
+  <rect x="50" y="160" width="90" height="55" rx="4" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="95" y="183" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.5">CRM Data</text>
+  <text x="95" y="200" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.3">Contacts, Enquiries</text>
+  <!-- Spreadsheet -->
+  <rect x="160" y="160" width="90" height="55" rx="4" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="170" y="175" width="70" height="30" rx="2" fill="#0A0515" stroke="#E5DAFB" stroke-width="0.5" stroke-opacity="0.2"/>
+  <line x1="195" y1="175" x2="195" y2="205" stroke="#E5DAFB" stroke-width="0.5" stroke-opacity="0.2"/>
+  <line x1="215" y1="175" x2="215" y2="205" stroke="#E5DAFB" stroke-width="0.5" stroke-opacity="0.2"/>
+  <line x1="170" y1="190" x2="240" y2="190" stroke="#E5DAFB" stroke-width="0.5" stroke-opacity="0.2"/>
+  <text x="205" y="230" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">Spreadsheets</text>
+  <!-- HMS -->
+  <rect x="70" y="245" width="100" height="50" rx="4" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="120" y="274" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.5">HMS / ERP</text>
+  <!-- Finance -->
+  <rect x="190" y="245" width="80" height="50" rx="4" fill="#130929" stroke="#E5DAFB" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="230" y="274" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.5">Finance</text>
+  <!-- Flow arrows from left to center -->
+  <path d="M100,140 C200,140 250,155 330,175" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5" marker-end="url(#df-arrow)"/>
+  <path d="M190,140 C250,145 280,155 330,175" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5" marker-end="url(#df-arrow)"/>
+  <path d="M250,190 C280,185 300,180 330,175" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4" marker-end="url(#df-arrow)"/>
+  <path d="M170,270 C240,260 280,220 330,175" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.3" marker-end="url(#df-arrow)"/>
+  <path d="M270,270 C300,250 310,220 340,180" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.3" marker-end="url(#df-arrow)"/>
+  <!-- Central processing node -->
+  <ellipse cx="420" cy="175" rx="80" ry="80" fill="#7114E2" fill-opacity="0.08" filter="url(#df-glow)"/>
+  <rect x="345" y="130" width="150" height="90" rx="12" fill="#130929" stroke="#7114E2" stroke-width="2"/>
+  <text x="420" y="168" text-anchor="middle" font-family="Poppins, sans-serif" font-size="16" fill="#E5DAFB" font-weight="600">Stairpay</text>
+  <text x="420" y="190" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#7114E2" letter-spacing="1">DATA PLATFORM</text>
+  <!-- Small processing indicators -->
+  <circle cx="370" cy="155" r="3" fill="#7114E2" fill-opacity="0.6"/>
+  <circle cx="470" cy="155" r="3" fill="#7114E2" fill-opacity="0.6"/>
+  <circle cx="370" cy="200" r="3" fill="#7114E2" fill-opacity="0.6"/>
+  <circle cx="470" cy="200" r="3" fill="#7114E2" fill-opacity="0.6"/>
+  <!-- Flow arrows from center to right -->
+  <path d="M495,155 C540,140 560,80 620,70" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5" marker-end="url(#df-arrow)"/>
+  <path d="M495,175 C540,175 570,175 620,175" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5" marker-end="url(#df-arrow)"/>
+  <path d="M495,195 C540,210 560,260 620,275" fill="none" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5" marker-end="url(#df-arrow)"/>
+  <!-- Right section: Structured outputs -->
+  <text x="760" y="30" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="2">OUTPUTS</text>
+  <!-- Dashboard output -->
+  <rect x="630" y="45" width="160" height="65" rx="6" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <rect x="645" y="58" width="40" height="20" rx="2" fill="#7114E2" fill-opacity="0.15"/>
+  <rect x="695" y="58" width="40" height="20" rx="2" fill="#7114E2" fill-opacity="0.15"/>
+  <rect x="745" y="58" width="30" height="20" rx="2" fill="#7114E2" fill-opacity="0.15"/>
+  <rect x="645" y="84" width="130" height="12" rx="2" fill="#7114E2" fill-opacity="0.1"/>
+  <text x="710" y="120" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#7114E2">Dashboards</text>
+  <!-- Structured data output -->
+  <rect x="630" y="145" width="160" height="65" rx="6" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <rect x="645" y="158" width="60" height="10" rx="2" fill="#7114E2" fill-opacity="0.2"/>
+  <rect x="715" y="158" width="60" height="10" rx="2" fill="#E5DAFB" fill-opacity="0.1"/>
+  <rect x="645" y="174" width="60" height="10" rx="2" fill="#7114E2" fill-opacity="0.2"/>
+  <rect x="715" y="174" width="60" height="10" rx="2" fill="#E5DAFB" fill-opacity="0.1"/>
+  <rect x="645" y="190" width="60" height="10" rx="2" fill="#7114E2" fill-opacity="0.2"/>
+  <rect x="715" y="190" width="60" height="10" rx="2" fill="#E5DAFB" fill-opacity="0.1"/>
+  <text x="710" y="225" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#7114E2">Structured Data</text>
+  <!-- API output -->
+  <rect x="630" y="250" width="160" height="65" rx="6" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="710" y="278" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.6">{ }</text>
+  <text x="710" y="298" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">API Endpoints</text>
+  <text x="710" y="330" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#7114E2">APIs &amp; Integrations</text>
+</svg>

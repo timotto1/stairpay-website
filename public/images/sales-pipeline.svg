@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350">
+  <defs>
+    <linearGradient id="sp-bar1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7114E2" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7114E2" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="sp-bar2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7114E2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#7114E2" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="sp-bar3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7114E2" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7114E2" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="sp-bar4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7114E2" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#7114E2" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="sp-bar5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7114E2" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#26045D" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="350" fill="#0A0515"/>
+  <text x="400" y="35" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#E5DAFB" font-weight="600">Sales Pipeline</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.4">Conversion funnel across shared ownership sales stages</text>
+  <!-- Stage 1: Enquiry -->
+  <rect x="80" y="80" width="620" height="42" rx="4" fill="url(#sp-bar1)" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="100" y="105" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" font-weight="500">Enquiry</text>
+  <text x="680" y="105" text-anchor="end" font-family="Poppins, sans-serif" font-size="12" fill="#E5DAFB" fill-opacity="0.7">248</text>
+  <!-- Stage 2: Qualified -->
+  <rect x="80" y="132" width="490" height="42" rx="4" fill="url(#sp-bar2)" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="100" y="157" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" font-weight="500">Qualified</text>
+  <text x="552" y="157" text-anchor="end" font-family="Poppins, sans-serif" font-size="12" fill="#E5DAFB" fill-opacity="0.7">156</text>
+  <!-- Stage 3: Viewing -->
+  <rect x="80" y="184" width="360" height="42" rx="4" fill="url(#sp-bar3)" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="100" y="209" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" font-weight="500">Viewing</text>
+  <text x="422" y="209" text-anchor="end" font-family="Poppins, sans-serif" font-size="12" fill="#E5DAFB" fill-opacity="0.7">98</text>
+  <!-- Stage 4: Reserved -->
+  <rect x="80" y="236" width="230" height="42" rx="4" fill="url(#sp-bar4)" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="100" y="261" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" font-weight="500">Reserved</text>
+  <text x="292" y="261" text-anchor="end" font-family="Poppins, sans-serif" font-size="12" fill="#E5DAFB" fill-opacity="0.7">52</text>
+  <!-- Stage 5: Completed -->
+  <rect x="80" y="288" width="140" height="42" rx="4" fill="url(#sp-bar5)" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="100" y="313" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" font-weight="500">Completed</text>
+  <text x="205" y="313" text-anchor="end" font-family="Poppins, sans-serif" font-size="12" fill="#E5DAFB" fill-opacity="0.7">34</text>
+  <!-- Conversion rate annotations -->
+  <line x1="720" y1="100" x2="720" y2="310" stroke="#E5DAFB" stroke-width="0.5" stroke-opacity="0.15"/>
+  <text x="740" y="125" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">63%</text>
+  <text x="740" y="177" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">63%</text>
+  <text x="740" y="229" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">53%</text>
+  <text x="740" y="281" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">65%</text>
+  <!-- Small arrow indicators -->
+  <path d="M730,110 L735,118 L725,118 Z" fill="#E5DAFB" fill-opacity="0.3"/>
+  <path d="M730,162 L735,170 L725,170 Z" fill="#E5DAFB" fill-opacity="0.3"/>
+  <path d="M730,214 L735,222 L725,222 Z" fill="#E5DAFB" fill-opacity="0.3"/>
+  <path d="M730,266 L735,274 L725,274 Z" fill="#E5DAFB" fill-opacity="0.3"/>
+  <!-- Overall conversion -->
+  <text x="740" y="320" font-family="Poppins, sans-serif" font-size="10" fill="#7114E2" font-weight="600">14%</text>
+  <text x="740" y="335" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Overall</text>
+</svg>

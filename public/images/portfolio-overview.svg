@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <rect width="800" height="400" fill="#0A0515"/>
+  <!-- Dashboard chrome -->
+  <rect x="20" y="15" width="760" height="370" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="20" y="15" width="760" height="35" rx="8" fill="#130929"/>
+  <rect x="20" y="42" width="760" height="8" fill="#130929"/>
+  <circle cx="42" cy="32" r="5" fill="#7114E2" fill-opacity="0.4"/>
+  <circle cx="58" cy="32" r="5" fill="#E5DAFB" fill-opacity="0.15"/>
+  <circle cx="74" cy="32" r="5" fill="#E5DAFB" fill-opacity="0.15"/>
+  <text x="400" y="37" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" fill="#E5DAFB" fill-opacity="0.6">Portfolio Overview — Board Report</text>
+  <line x1="20" y1="50" x2="780" y2="50" stroke="#7114E2" stroke-width="0.5" stroke-opacity="0.3"/>
+  <!-- 4 large metric callouts -->
+  <rect x="40" y="65" width="168" height="90" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="55" y="88" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">TOTAL UNITS</text>
+  <text x="55" y="122" font-family="Poppins, sans-serif" font-size="30" fill="#E5DAFB" font-weight="700">2,847</text>
+  <text x="55" y="142" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e" fill-opacity="0.7">+124 YTD</text>
+  <rect x="228" y="65" width="168" height="90" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="243" y="88" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">PORTFOLIO VALUE</text>
+  <text x="243" y="122" font-family="Poppins, sans-serif" font-size="30" fill="#E5DAFB" font-weight="700">£842M</text>
+  <text x="243" y="142" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e" fill-opacity="0.7">+4.2% YoY</text>
+  <rect x="416" y="65" width="168" height="90" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="431" y="88" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">RENTAL INCOME</text>
+  <text x="431" y="122" font-family="Poppins, sans-serif" font-size="30" fill="#E5DAFB" font-weight="700">£3.2M</text>
+  <text x="431" y="142" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.4">Annual projected</text>
+  <rect x="604" y="65" width="156" height="90" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="619" y="88" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">AVG EQUITY</text>
+  <text x="619" y="122" font-family="Poppins, sans-serif" font-size="30" fill="#E5DAFB" font-weight="700">38%</text>
+  <text x="619" y="142" font-family="Poppins, sans-serif" font-size="9" fill="#7114E2">Homeowner share</text>
+  <!-- Heatmap / Grid -->
+  <rect x="40" y="170" width="720" height="200" rx="6" fill="#0A0515" stroke="#7114E2" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="60" y="195" font-family="Poppins, sans-serif" font-size="10" fill="#E5DAFB" fill-opacity="0.5" letter-spacing="1">DEVELOPMENT PERFORMANCE HEATMAP</text>
+  <!-- Column headers -->
+  <text x="240" y="220" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Occupancy</text>
+  <text x="340" y="220" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Collection</text>
+  <text x="440" y="220" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Staircasing</text>
+  <text x="540" y="220" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Satisfaction</text>
+  <text x="640" y="220" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Compliance</text>
+  <text x="720" y="220" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Risk</text>
+  <line x1="55" y1="226" x2="745" y2="226" stroke="#7114E2" stroke-width="0.5" stroke-opacity="0.15"/>
+  <!-- Row 1 -->
+  <text x="130" y="248" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Riverside Gate</text>
+  <rect x="210" y="232" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="240" y="247" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">98%</text>
+  <rect x="310" y="232" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="340" y="247" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">99%</text>
+  <rect x="410" y="232" width="60" height="22" rx="3" fill="#7114E2" fill-opacity="0.25"/>
+  <text x="440" y="247" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">Med</text>
+  <rect x="510" y="232" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.2"/>
+  <text x="540" y="247" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">4.2</text>
+  <rect x="610" y="232" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="640" y="247" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">100%</text>
+  <rect x="690" y="232" width="50" height="22" rx="3" fill="#22c55e" fill-opacity="0.15"/>
+  <text x="715" y="247" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">Low</text>
+  <!-- Row 2 -->
+  <text x="130" y="278" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Cedar Park</text>
+  <rect x="210" y="262" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.2"/>
+  <text x="240" y="277" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">96%</text>
+  <rect x="310" y="262" width="60" height="22" rx="3" fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="340" y="277" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#f59e0b">94%</text>
+  <rect x="410" y="262" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="440" y="277" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">High</text>
+  <rect x="510" y="262" width="60" height="22" rx="3" fill="#7114E2" fill-opacity="0.2"/>
+  <text x="540" y="277" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">3.8</text>
+  <rect x="610" y="262" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="640" y="277" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">100%</text>
+  <rect x="690" y="262" width="50" height="22" rx="3" fill="#22c55e" fill-opacity="0.15"/>
+  <text x="715" y="277" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">Low</text>
+  <!-- Row 3 -->
+  <text x="130" y="308" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Harbour View</text>
+  <rect x="210" y="292" width="60" height="22" rx="3" fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="240" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#f59e0b">91%</text>
+  <rect x="310" y="292" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.2"/>
+  <text x="340" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">97%</text>
+  <rect x="410" y="292" width="60" height="22" rx="3" fill="#7114E2" fill-opacity="0.25"/>
+  <text x="440" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB">Med</text>
+  <rect x="510" y="292" width="60" height="22" rx="3" fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="540" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#f59e0b">3.4</text>
+  <rect x="610" y="292" width="60" height="22" rx="3" fill="#f59e0b" fill-opacity="0.2"/>
+  <text x="640" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#f59e0b">92%</text>
+  <rect x="690" y="292" width="50" height="22" rx="3" fill="#f59e0b" fill-opacity="0.15"/>
+  <text x="715" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#f59e0b">Med</text>
+  <!-- Row 4 -->
+  <text x="130" y="338" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.7">Kings Quarter</text>
+  <rect x="210" y="322" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="240" y="337" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">100%</text>
+  <rect x="310" y="322" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="340" y="337" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">99%</text>
+  <rect x="410" y="322" width="60" height="22" rx="3" fill="#E5DAFB" fill-opacity="0.1"/>
+  <text x="440" y="337" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Low</text>
+  <rect x="510" y="322" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="540" y="337" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">4.5</text>
+  <rect x="610" y="322" width="60" height="22" rx="3" fill="#22c55e" fill-opacity="0.25"/>
+  <text x="640" y="337" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">100%</text>
+  <rect x="690" y="322" width="50" height="22" rx="3" fill="#22c55e" fill-opacity="0.15"/>
+  <text x="715" y="337" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#22c55e">Low</text>
+  <!-- Legend -->
+  <rect x="55" y="355" width="10" height="10" rx="2" fill="#22c55e" fill-opacity="0.3"/>
+  <text x="72" y="364" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Good</text>
+  <rect x="110" y="355" width="10" height="10" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
+  <text x="127" y="364" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Attention</text>
+  <rect x="180" y="355" width="10" height="10" rx="2" fill="#7114E2" fill-opacity="0.3"/>
+  <text x="197" y="364" font-family="Poppins, sans-serif" font-size="8" fill="#E5DAFB" fill-opacity="0.4">Neutral</text>
+</svg>

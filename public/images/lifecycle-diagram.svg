@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="1000" height="200">
+  <defs>
+    <marker id="lc-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#7114E2" stroke-width="1"/>
+    </marker>
+    <linearGradient id="lc-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0A0515"/>
+      <stop offset="50%" stop-color="#130929" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0A0515"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="200" fill="#0A0515"/>
+  <!-- Subtle horizontal glow line -->
+  <line x1="60" y1="100" x2="940" y2="100" stroke="#7114E2" stroke-width="1" stroke-opacity="0.1"/>
+  <!-- Stage 1: Sales -->
+  <rect x="30" y="60" width="130" height="80" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="95" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#E5DAFB" font-weight="500">Sales</text>
+  <text x="95" y="116" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Enquiry to Exchange</text>
+  <!-- Arrow 1-2 -->
+  <line x1="160" y1="100" x2="192" y2="100" stroke="#7114E2" stroke-width="1" marker-end="url(#lc-arrow)"/>
+  <!-- Stage 2: Move-in -->
+  <rect x="196" y="60" width="130" height="80" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="261" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#E5DAFB" font-weight="500">Move-in</text>
+  <text x="261" y="116" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Completion &amp; Onboard</text>
+  <!-- Arrow 2-3 -->
+  <line x1="326" y1="100" x2="358" y2="100" stroke="#7114E2" stroke-width="1" marker-end="url(#lc-arrow)"/>
+  <!-- Stage 3: Homeownership -->
+  <rect x="362" y="60" width="140" height="80" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="432" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" font-weight="500">Homeownership</text>
+  <text x="432" y="116" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Ongoing Management</text>
+  <!-- Arrow 3-4 -->
+  <line x1="502" y1="100" x2="534" y2="100" stroke="#7114E2" stroke-width="1" marker-end="url(#lc-arrow)"/>
+  <!-- Stage 4: Staircasing -->
+  <rect x="538" y="60" width="130" height="80" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="603" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#E5DAFB" font-weight="500">Staircasing</text>
+  <text x="603" y="116" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Equity Acquisition</text>
+  <!-- Arrow 4-5 -->
+  <line x1="668" y1="100" x2="700" y2="100" stroke="#7114E2" stroke-width="1" marker-end="url(#lc-arrow)"/>
+  <!-- Stage 5: Rent & SC -->
+  <rect x="704" y="60" width="130" height="80" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="769" y="92" text-anchor="middle" font-family="Poppins, sans-serif" font-size="13" fill="#E5DAFB" font-weight="500">Rent &amp; SC</text>
+  <text x="769" y="116" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Income Management</text>
+  <!-- Arrow 5-6 -->
+  <line x1="834" y1="100" x2="866" y2="100" stroke="#7114E2" stroke-width="1" marker-end="url(#lc-arrow)"/>
+  <!-- Stage 6: Resale -->
+  <rect x="870" y="60" width="100" height="80" rx="8" fill="#130929" stroke="#7114E2" stroke-width="1.5"/>
+  <text x="920" y="96" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#E5DAFB" font-weight="500">Resale</text>
+  <text x="920" y="116" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.5">Nomination &amp; Sale</text>
+  <!-- Top label -->
+  <text x="500" y="30" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#7114E2" letter-spacing="3" fill-opacity="0.7">SHARED OWNERSHIP LIFECYCLE</text>
+  <!-- Bottom subtle line -->
+  <line x1="95" y1="170" x2="920" y2="170" stroke="#7114E2" stroke-width="0.5" stroke-opacity="0.15"/>
+  <text x="500" y="186" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#E5DAFB" fill-opacity="0.3">End-to-end data continuity across every stage</text>
+</svg>
