@@ -24,6 +24,7 @@ import { IntelligenceLayerCard } from "@/components/sections/IntelligenceLayerCa
 import { ContentSection } from "@/components/sections/ContentSection";
 import { StatementBanner } from "@/components/sections/StatementBanner";
 import { ProductShowcase } from "@/components/sections/ProductShowcase";
+import { VisionBanner } from "@/components/sections/VisionBanner";
 
 export const metadata: Metadata = {
   title: "Stairpay — The Operating System for Shared Ownership",
@@ -125,6 +126,9 @@ export default function HomePage() {
           },
         ]}
       />
+
+      {/* ─── 2c. Vision Banner ─── */}
+      <VisionBanner />
 
       {/* ─── 3. Data Infrastructure ─── */}
       <SectionWrapper theme="light" id="data-infrastructure">

@@ -78,7 +78,7 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
 
           let rowFlex = 1;
           if (hoveredRow !== null) {
-            rowFlex = hoveredRow === rowIdx ? 3 : 0.6;
+            rowFlex = hoveredRow === rowIdx ? 3.5 : 0.4;
           }
 
           return (
@@ -156,14 +156,21 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
                             )}
                           </AnimatePresence>
 
-                          {/* Title + tagline pinned to bottom-left */}
-                          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10">
+                          {/* Title + tagline — bottom for hovered/same-row/default, centered for other row */}
+                          <div
+                            className="absolute left-0 right-0 px-6 md:px-8 z-10 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                            style={
+                              hoveredIndex !== null && !isHovered && hoveredRow !== rowIdx
+                                ? { bottom: "50%", transform: "translateY(50%)" }
+                                : { bottom: "0", transform: "translateY(0)", paddingBottom: "24px" }
+                            }
+                          >
                             <span
                               className={`block font-[400] tracking-[-0.02em] leading-[1] whitespace-nowrap transition-[font-size,color] duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                                 isHovered
                                   ? "text-[32px] md:text-[44px] text-[var(--color-accent)]"
                                   : hoveredIndex !== null
-                                  ? "text-[18px] md:text-[24px] text-[var(--color-text-muted)]"
+                                  ? "text-[24px] md:text-[32px] text-[var(--color-text-muted)]"
                                   : "text-[24px] md:text-[32px] text-[var(--color-text-dark)]"
                               }`}
                             >
