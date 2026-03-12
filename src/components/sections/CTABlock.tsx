@@ -27,6 +27,7 @@ export function CTABlock({
 
   return (
     <section
+      data-theme={isDark ? "dark" : "light"}
       className={
         isDark ? "bg-[var(--color-bg-primary)]" : "bg-[var(--color-bg-surface)]"
       }

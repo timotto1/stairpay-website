@@ -16,13 +16,14 @@ const themes: Record<Theme, string> = {
 
 export function SectionWrapper({
   children,
-  theme = "dark",
+  theme = "white",
   className = "",
   id,
 }: SectionWrapperProps) {
   return (
     <section
       id={id}
+      data-theme={theme === "dark" || theme === "darker" ? "dark" : "light"}
       className={`py-20 md:py-[100px] ${themes[theme]} ${className}`}
     >
       {children}

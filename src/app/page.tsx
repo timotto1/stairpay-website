@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   FileText,
   TrendingUp,
@@ -18,12 +17,13 @@ import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Badge } from "@/components/ui/Badge";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CTABlock } from "@/components/sections/CTABlock";
-import { LogoBar } from "@/components/sections/LogoBar";
 import { MetricCalloutGrid } from "@/components/sections/MetricCalloutGrid";
 import { PersonaTileGrid } from "@/components/sections/PersonaTileGrid";
-import { LifecycleVisual } from "@/components/sections/LifecycleVisual";
+import { DataFlowVisual } from "@/components/sections/DataFlowVisual";
 import { IntelligenceLayerCard } from "@/components/sections/IntelligenceLayerCard";
 import { ContentSection } from "@/components/sections/ContentSection";
+import { StatementBanner } from "@/components/sections/StatementBanner";
+import { ProductShowcase } from "@/components/sections/ProductShowcase";
 
 export const metadata: Metadata = {
   title: "Stairpay — The Operating System for Shared Ownership",
@@ -46,43 +46,99 @@ export default function HomePage() {
 
       {/* ─── 1. Hero ─── */}
       <HeroSection
-        eyebrow="SHARED OWNERSHIP INFRASTRUCTURE"
-        headline="The Operating System for Shared Ownership"
-        description="Enterprise-grade infrastructure spanning the entire Shared Ownership lifecycle. From first enquiry through to resale, Stairpay gives housing associations the intelligence layer they have never had — purpose-built for regulated portfolios at scale."
-        primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
-        secondaryCta={{ label: "Request a Platform Overview", href: "/platform" }}
-      >
-        <Image
-          src="/images/architecture-hero.svg"
-          alt="Stairpay platform architecture diagram showing interconnected intelligence layers"
-          width={560}
-          height={440}
-          priority
-          className="w-full h-auto"
-        />
-      </HeroSection>
+        headline="Automated Operations for UK Housing Associations"
+        description="Enterprise-grade infrastructure spanning the entire affordable housing lifecycle."
+        videoSources={[
+          "/videos/istockphoto-1346887239-640_adpp_is.mp4",
+          "/videos/istockphoto-1780339786-640_adpp_is.mp4",
+        ]}
+        logoTicker={[
+          "Clarion",
+          "SNG",
+          "Settle",
+          "Paradigm",
+          "Auxesia",
+          "Midland Heart",
+          "MTD",
+          "Resi Housing",
+          "Places for People",
+          "Sage Homes",
+          "M&G",
+          "Green Square Accord",
+          "Platform",
+          "Southern Housing",
+          "Moat",
+        ]}
+      />
 
-      {/* ─── 2. Logo Bar ─── */}
-      <LogoBar />
+      {/* ─── 2. Statement Banner ─── */}
+      <StatementBanner>
+        Our software powers{" "}
+        <span className="text-[var(--color-accent)]">a third of all shared ownership homes</span>{" "}
+        in the UK — from initial inquiry to reaching 100%.
+      </StatementBanner>
 
-      {/* ─── 3. Lifecycle Section ─── */}
-      <SectionWrapper theme="dark" id="lifecycle">
+      {/* ─── 2b. Product Showcase ─── */}
+      <ProductShowcase
+        products={[
+          {
+            name: "Sales",
+            tagline: "First enquiry to legal completion.",
+            description: "A structured, governed pipeline that replaces spreadsheets and email chains — tracking every enquiry from initial contact through viewings, reservations, and legal completion with full audit trails and automated stage progression.",
+            href: "/intelligence-layers/sales",
+            illustration: "/images/product-sales.svg",
+          },
+          {
+            name: "Leasehold",
+            tagline: "Documents into queryable intelligence.",
+            description: "AI-powered extraction processes thousands of lease documents into structured, searchable data — surfacing key dates, clauses, and obligations so your team can act on portfolio-wide intelligence instead of reading PDFs one by one.",
+            href: "/intelligence-layers/lease",
+            illustration: "/images/product-leasehold.svg",
+          },
+          {
+            name: "Aftersales",
+            tagline: "Proactive staircasing and capital activation.",
+            description: "Identifies staircasing opportunities across your entire portfolio and automates outreach to eligible homeowners — turning dormant equity into realised capital while keeping every transaction compliant and fully documented.",
+            href: "/intelligence-layers/aftersales",
+            illustration: "/images/product-aftersales.svg",
+          },
+          {
+            name: "Rent",
+            tagline: "Lease-compliant rent at portfolio scale.",
+            description: "Automates annual rent-setting calculations by reading lease terms directly — handling RPI uplifts, cap-and-collar clauses, and fixed increases across thousands of units without manual interpretation or spreadsheet risk.",
+            href: "/intelligence-layers/rent-service-charge",
+            illustration: "/images/product-rent.svg",
+          },
+          {
+            name: "Service Charge",
+            tagline: "Transparent apportionment with full audit trails.",
+            description: "Calculates and apportions service charges using lease-defined schedules, producing transparent breakdowns for every unit. Complete audit trails ensure every pound is accounted for and defensible under Section 20 consultation.",
+            href: "/intelligence-layers/rent-service-charge",
+            illustration: "/images/product-service-charge.svg",
+          },
+          {
+            name: "Audit",
+            tagline: "Real-time compliance across every layer.",
+            description: "Gives boards and executives a live compliance dashboard spanning every operational layer — flagging overdue actions, incomplete documentation, and regulatory risks before they escalate, with exportable governance reports.",
+            href: "/intelligence-layers/portfolio",
+            illustration: "/images/product-audit.svg",
+          },
+        ]}
+      />
+
+      {/* ─── 3. Data Infrastructure ─── */}
+      <SectionWrapper theme="light" id="data-infrastructure">
         <Container>
           <div className="max-w-[680px] mx-auto text-center mb-16">
-            <Badge>THE COMPLETE LIFECYCLE</Badge>
-            <h2 className="text-h2 text-[var(--color-text-primary)] mt-6">
-              Intelligence Across Every Stage
+            <Badge theme="light">DATA INFRASTRUCTURE</Badge>
+            <h2 className="text-h2 text-[var(--color-text-dark)] mt-6">
+              Every Document. One Database. Total Control.
             </h2>
-            <p className="text-body text-[var(--color-text-secondary)] mt-5">
-              Most providers manage Shared Ownership through disconnected
-              spreadsheets, siloed teams, and legacy systems that were never
-              designed for the tenure. Stairpay spans the full arc — Sales,
-              Move-in, Homeownership, Staircasing, Rent &amp; Service Charge,
-              and Resale — delivering structured intelligence at every
-              transition point.
+            <p className="text-body text-[var(--color-text-body)] mt-5">
+              Stairpay ingests every document type an institutional landlord holds — leases, EPCs, fire safety certificates, tenancy agreements, valuations, and development records — into a single structured database. From that foundation, every operational workflow is automated: lease extensions, staircasing, rent setting, service charge reconciliation, and more.
             </p>
           </div>
-          <LifecycleVisual />
+          <DataFlowVisual />
         </Container>
       </SectionWrapper>
 
@@ -139,16 +195,17 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ─── 5. Built for Shared Ownership Leadership ─── */}
-      <SectionWrapper theme="dark" id="for-providers">
+      <SectionWrapper theme="white" id="for-providers">
         <Container>
           <div className="max-w-[680px] mx-auto text-center mb-16">
-            <Badge>FOR PROVIDERS</Badge>
-            <h2 className="text-h2 text-[var(--color-text-primary)] mt-6">
+            <Badge theme="light">FOR PROVIDERS</Badge>
+            <h2 className="text-h2 text-[var(--color-text-dark)] mt-6">
               Built for Shared Ownership Leadership
             </h2>
           </div>
 
           <PersonaTileGrid
+            theme="light"
             personas={[
               {
                 icon: <Shield className="w-6 h-6" />,
@@ -192,7 +249,7 @@ export default function HomePage() {
 
       {/* ─── 6. Metrics ─── */}
       <MetricCalloutGrid
-        theme="dark"
+        theme="light"
         metrics={[
           { value: "6", label: "Intelligence Layers" },
           { value: "100%", label: "Lifecycle Coverage" },

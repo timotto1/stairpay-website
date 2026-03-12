@@ -95,8 +95,12 @@ export function ContentSection({
             />
           ) : (
             /* Placeholder visual block */
-            <div className="aspect-[4/3] w-full bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] flex items-center justify-center">
-              <span className="text-small text-[var(--color-text-muted)]">
+            <div className={`aspect-[4/3] w-full border flex items-center justify-center ${
+              isDark
+                ? "bg-[var(--color-bg-card-dark)] border-[var(--color-border-dark)]"
+                : "bg-[var(--color-bg-surface)] border-[var(--color-border-card)]"
+            }`}>
+              <span className={`text-small ${isDark ? "text-[var(--color-text-muted)]" : "text-[var(--color-text-body-light)]"}`}>
                 Visual
               </span>
             </div>

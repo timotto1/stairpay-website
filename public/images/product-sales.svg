@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <pattern id="s-xhatch" width="8" height="8" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="8" y2="8" stroke="#7114E2" stroke-width="0.5" opacity="0.6"/>
+      <line x1="8" y1="0" x2="0" y2="8" stroke="#7114E2" stroke-width="0.5" opacity="0.6"/>
+    </pattern>
+    <pattern id="s-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="0.8" fill="#7114E2" opacity="0.5"/>
+    </pattern>
+    <pattern id="s-diag" width="6" height="6" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="6" y2="0" stroke="#7114E2" stroke-width="0.5" opacity="0.5"/>
+    </pattern>
+  </defs>
+  <!-- Construction lines -->
+  <line x1="200" y1="20" x2="200" y2="380" stroke="#D4D4D4" stroke-width="0.4" stroke-dasharray="2,4"/>
+  <line x1="40" y1="200" x2="360" y2="200" stroke="#D4D4D4" stroke-width="0.4" stroke-dasharray="2,4"/>
+  <line x1="80" y1="42" x2="320" y2="42" stroke="#D4D4D4" stroke-width="0.3" opacity="0.5"/>
+  <line x1="80" y1="38" x2="80" y2="46" stroke="#D4D4D4" stroke-width="0.3" opacity="0.5"/>
+  <line x1="320" y1="38" x2="320" y2="46" stroke="#D4D4D4" stroke-width="0.3" opacity="0.5"/>
+  <!-- Corner marks -->
+  <g stroke="#D4D4D4" stroke-width="0.5" opacity="0.4">
+    <line x1="20" y1="20" x2="35" y2="20"/><line x1="20" y1="20" x2="20" y2="35"/>
+    <line x1="380" y1="20" x2="365" y2="20"/><line x1="380" y1="20" x2="380" y2="35"/>
+    <line x1="20" y1="380" x2="35" y2="380"/><line x1="20" y1="380" x2="20" y2="365"/>
+    <line x1="380" y1="380" x2="365" y2="380"/><line x1="380" y1="380" x2="380" y2="365"/>
+  </g>
+  <!-- Funnel tier 1 (widest) -->
+  <polygon points="200,60 330,110 200,160 70,110" fill="#7114E2" fill-opacity="0.15" stroke="#7114E2" stroke-width="1" opacity="0.85"/>
+  <polygon points="200,60 330,110 200,160 70,110" fill="url(#s-dots)"/>
+  <polygon points="70,110 200,160 200,178 70,128" fill="#7114E2" fill-opacity="0.25" stroke="#7114E2" stroke-width="0.8" opacity="0.8"/>
+  <polygon points="70,110 200,160 200,178 70,128" fill="url(#s-xhatch)"/>
+  <polygon points="330,110 200,160 200,178 330,128" fill="#7114E2" fill-opacity="0.12" stroke="#7114E2" stroke-width="0.8" opacity="0.8"/>
+  <!-- Funnel tier 2 -->
+  <polygon points="200,155 290,190 200,225 110,190" fill="#7114E2" fill-opacity="0.2" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <polygon points="200,155 290,190 200,225 110,190" fill="url(#s-xhatch)"/>
+  <polygon points="110,190 200,225 200,245 110,210" fill="#7114E2" fill-opacity="0.3" stroke="#7114E2" stroke-width="0.8" opacity="0.75"/>
+  <polygon points="110,190 200,225 200,245 110,210" fill="url(#s-diag)"/>
+  <polygon points="290,190 200,225 200,245 290,210" fill="#7114E2" fill-opacity="0.15" stroke="#7114E2" stroke-width="0.8" opacity="0.75"/>
+  <!-- Funnel tier 3 -->
+  <polygon points="200,235 260,258 200,281 140,258" fill="#7114E2" fill-opacity="0.28" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <polygon points="200,235 260,258 200,281 140,258" fill="url(#s-dots)"/>
+  <polygon points="140,258 200,281 200,300 140,277" fill="#7114E2" fill-opacity="0.4" stroke="#7114E2" stroke-width="0.8" opacity="0.75"/>
+  <polygon points="140,258 200,281 200,300 140,277" fill="url(#s-xhatch)"/>
+  <polygon points="260,258 200,281 200,300 260,277" fill="#7114E2" fill-opacity="0.2" stroke="#7114E2" stroke-width="0.8" opacity="0.75"/>
+  <!-- Funnel output -->
+  <polygon points="200,294 228,306 200,318 172,306" fill="#7114E2" fill-opacity="0.45" stroke="#7114E2" stroke-width="1.2" opacity="0.85"/>
+  <polygon points="172,306 200,318 200,340 172,328" fill="#7114E2" fill-opacity="0.5" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <polygon points="228,306 200,318 200,340 228,328" fill="#7114E2" fill-opacity="0.3" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <!-- Flow arrows -->
+  <polygon points="197,148 200,155 203,148" fill="#7114E2" opacity="0.7"/>
+  <polygon points="197,225 200,232 203,225" fill="#7114E2" opacity="0.7"/>
+  <polygon points="197,286 200,293 203,286" fill="#7114E2" opacity="0.7"/>
+  <!-- Side pipelines -->
+  <line x1="110" y1="200" x2="55" y2="230" stroke="#7114E2" stroke-width="0.8" opacity="0.5"/>
+  <line x1="55" y1="230" x2="55" y2="280" stroke="#7114E2" stroke-width="0.8" opacity="0.5"/>
+  <rect x="45" y="280" width="20" height="12" rx="1" fill="url(#s-dots)" stroke="#7114E2" stroke-width="0.6" opacity="0.55"/>
+  <line x1="290" y1="200" x2="345" y2="230" stroke="#7114E2" stroke-width="0.8" opacity="0.5"/>
+  <line x1="345" y1="230" x2="345" y2="280" stroke="#7114E2" stroke-width="0.8" opacity="0.5"/>
+  <rect x="335" y="280" width="20" height="12" rx="1" fill="url(#s-dots)" stroke="#7114E2" stroke-width="0.6" opacity="0.55"/>
+  <!-- Floating cubes -->
+  <polygon points="95,68 105,63 115,68 105,73" fill="#7114E2" fill-opacity="0.25" stroke="#7114E2" stroke-width="0.6" opacity="0.6"/>
+  <polygon points="285,68 295,63 305,68 295,73" fill="#7114E2" fill-opacity="0.25" stroke="#7114E2" stroke-width="0.6" opacity="0.6"/>
+  <!-- Output drip -->
+  <line x1="200" y1="340" x2="200" y2="358" stroke="#7114E2" stroke-width="1" opacity="0.55" stroke-dasharray="2,2"/>
+  <circle cx="200" cy="364" r="3" fill="#7114E2" opacity="0.6"/>
+  <!-- Labels -->
+  <text x="38" y="102" font-family="monospace" font-size="6" fill="#7114E2" opacity="0.55" transform="rotate(-90,38,102)">INTAKE</text>
+  <text x="38" y="200" font-family="monospace" font-size="6" fill="#7114E2" opacity="0.5" transform="rotate(-90,38,200)">QUALIFY</text>
+  <text x="38" y="280" font-family="monospace" font-size="6" fill="#7114E2" opacity="0.5" transform="rotate(-90,38,280)">CONVERT</text>
+</svg>

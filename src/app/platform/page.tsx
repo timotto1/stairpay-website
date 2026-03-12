@@ -57,10 +57,11 @@ export default function PlatformOverviewPage() {
       </HeroSection>
 
       {/* ─── How Everything Connects ─── */}
-      <SectionWrapper theme="dark" id="architecture">
+      <SectionWrapper theme="light" id="architecture">
         <ContentSection
           eyebrow="ARCHITECTURE"
           headline="How Everything Connects"
+          theme="light"
           body={
             <>
               <p>
@@ -141,10 +142,11 @@ export default function PlatformOverviewPage() {
       </SectionWrapper>
 
       {/* ─── Why Platform, Not Point Solutions ─── */}
-      <SectionWrapper theme="dark" id="platform-vs-point">
+      <SectionWrapper theme="white" id="platform-vs-point">
         <ContentSection
           eyebrow="WHY PLATFORM"
           headline="Why Platform, Not Point Solutions"
+          theme="light"
           body={
             <>
               <p>
@@ -180,9 +182,9 @@ export default function PlatformOverviewPage() {
       </SectionWrapper>
 
       {/* ─── Metrics ─── */}
-      <SectionWrapper theme="darker">
+      <SectionWrapper theme="light">
         <MetricCalloutGrid
-          theme="dark"
+          theme="light"
           metrics={[
             { value: "5", label: "Intelligence Layers" },
             { value: "1", label: "Unified Data Model" },

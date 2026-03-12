@@ -11,6 +11,7 @@ interface InsightCardProps {
   excerpt: string;
   href: string;
   featured?: boolean;
+  theme?: "dark" | "light";
 }
 
 export function InsightCard({
@@ -20,7 +21,10 @@ export function InsightCard({
   excerpt,
   href,
   featured = false,
+  theme = "light",
 }: InsightCardProps) {
+  const isDark = theme === "dark";
+
   return (
     <motion.a
       href={href}
@@ -28,31 +32,39 @@ export function InsightCard({
       initial="hidden"
       whileInView="visible"
       viewport={viewport}
-      className={`group block bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] transition-all duration-[250ms] hover:bg-[var(--color-bg-card-dark-hover)] hover:-translate-y-1 ${
+      className={`group block border transition-all duration-[250ms] hover:-translate-y-1 ${
         featured ? "p-10" : "p-8"
+      } ${
+        isDark
+          ? "bg-[var(--color-bg-card-dark)] border-[var(--color-border-dark)] hover:bg-[var(--color-bg-card-dark-hover)]"
+          : "bg-[var(--color-bg-card-light)] border-[var(--color-border-card)] shadow-sm hover:bg-[var(--color-bg-card-light-hover)] hover:shadow-md"
       }`}
     >
-      <span className="text-eyebrow text-[var(--color-accent-pale)]">
+      <span className={`text-eyebrow ${isDark ? "text-[var(--color-accent-pale)]" : "text-[var(--color-accent)]"}`}>
         {category}
       </span>
 
       <h3
         className={`${
           featured ? "text-h2" : "text-h3"
-        } text-[var(--color-text-primary)] mt-4`}
+        } mt-4 ${isDark ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-dark)]"}`}
       >
         {title}
       </h3>
 
-      <p className="text-body text-[var(--color-text-secondary)] mt-3">
+      <p className={`text-body mt-3 ${isDark ? "text-[var(--color-text-secondary)]" : "text-[var(--color-text-body)]"}`}>
         {excerpt}
       </p>
 
       <div className="flex items-center justify-between mt-6">
-        <span className="text-small text-[var(--color-text-muted)]">
+        <span className={`text-small ${isDark ? "text-[var(--color-text-muted)]" : "text-[var(--color-text-body-light)]"}`}>
           {date}
         </span>
-        <span className="inline-flex items-center gap-2 text-[13px] font-[500] text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors duration-[150ms]">
+        <span className={`inline-flex items-center gap-2 text-[13px] font-[500] transition-colors duration-[150ms] ${
+          isDark
+            ? "text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]"
+            : "text-[var(--color-text-body-light)] group-hover:text-[var(--color-accent)]"
+        }`}>
           Read
           <ArrowRight
             size={14}

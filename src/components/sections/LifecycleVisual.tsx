@@ -15,7 +15,12 @@ const stages = [
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-export function LifecycleVisual() {
+interface LifecycleVisualProps {
+  theme?: "dark" | "light";
+}
+
+export function LifecycleVisual({ theme = "light" }: LifecycleVisualProps) {
+  const isDark = theme === "dark";
   return (
     <Container>
       <div className="relative">
@@ -27,7 +32,7 @@ export function LifecycleVisual() {
           viewport={viewport}
           className="text-center mb-6"
         >
-          <span className="text-eyebrow text-[var(--color-accent-pale)]">
+          <span className={`text-eyebrow ${isDark ? "text-[var(--color-accent-pale)]" : "text-[var(--color-accent)]"}`}>
             Intelligence Layers
           </span>
         </motion.div>
@@ -40,7 +45,7 @@ export function LifecycleVisual() {
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 1, ease, delay: 0.2 }}
             viewport={viewport}
-            className="hidden md:block absolute top-1/2 left-[8%] right-[8%] h-px bg-[var(--color-border-dark)] origin-left -translate-y-1/2 z-0"
+            className={`hidden md:block absolute top-1/2 left-[8%] right-[8%] h-px origin-left -translate-y-1/2 z-0 ${isDark ? "bg-[var(--color-border-dark)]" : "bg-[var(--color-border-card)]"}`}
           />
 
           {/* Connecting line — mobile */}
@@ -49,7 +54,7 @@ export function LifecycleVisual() {
             whileInView={{ scaleY: 1 }}
             transition={{ duration: 1, ease, delay: 0.2 }}
             viewport={viewport}
-            className="md:hidden absolute left-1/2 top-[4%] bottom-[4%] w-px bg-[var(--color-border-dark)] origin-top -translate-x-1/2 z-0"
+            className={`md:hidden absolute left-1/2 top-[4%] bottom-[4%] w-px origin-top -translate-x-1/2 z-0 ${isDark ? "bg-[var(--color-border-dark)]" : "bg-[var(--color-border-card)]"}`}
           />
 
           {stages.map((stage, i) => (
@@ -65,8 +70,12 @@ export function LifecycleVisual() {
               viewport={viewport}
               className="relative z-10 flex flex-col items-center"
             >
-              <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full border border-[var(--color-border-dark)] bg-[var(--color-bg-card-dark)] flex items-center justify-center">
-                <span className="text-small text-[var(--color-text-secondary)] text-center leading-tight px-2">
+              <div className={`w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full border flex items-center justify-center ${
+                isDark
+                  ? "border-[var(--color-border-dark)] bg-[var(--color-bg-card-dark)]"
+                  : "border-[var(--color-border-card)] bg-[var(--color-bg-card-light)] shadow-sm"
+              }`}>
+                <span className={`text-small text-center leading-tight px-2 ${isDark ? "text-[var(--color-text-secondary)]" : "text-[var(--color-text-body)]"}`}>
                   {stage}
                 </span>
               </div>
@@ -80,9 +89,13 @@ export function LifecycleVisual() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease, delay: 0.8 }}
           viewport={viewport}
-          className="mt-8 border border-[var(--color-border-dark)] bg-[var(--color-bg-card-dark)] py-4 text-center"
+          className={`mt-8 border py-4 text-center ${
+            isDark
+              ? "border-[var(--color-border-dark)] bg-[var(--color-bg-card-dark)]"
+              : "border-[var(--color-border-card)] bg-[var(--color-bg-card-light)] shadow-sm"
+          }`}
         >
-          <span className="text-eyebrow text-[var(--color-text-muted)]">
+          <span className={`text-eyebrow ${isDark ? "text-[var(--color-text-muted)]" : "text-[var(--color-text-body-light)]"}`}>
             Shared Ownership Data Infrastructure
           </span>
         </motion.div>

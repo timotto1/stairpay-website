@@ -48,7 +48,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--color-bg-secondary)] border-t border-[var(--color-border-dark)]">
+    <footer data-theme="dark" className="bg-[var(--color-bg-secondary)] border-t border-[var(--color-border-dark)]">
       <Container className="py-16">
         {/* Top: logo + links */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">

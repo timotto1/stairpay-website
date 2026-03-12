@@ -8,6 +8,7 @@ interface IntelligenceLayerCardProps {
   title: string;
   description: string;
   href?: string;
+  theme?: "dark" | "light";
 }
 
 export function IntelligenceLayerCard({
@@ -15,19 +16,23 @@ export function IntelligenceLayerCard({
   title,
   description,
   href,
+  theme = "light",
 }: IntelligenceLayerCardProps) {
+  const isDark = theme === "dark";
+
   const content = (
     <>
-      <div className="text-[var(--color-accent-pale)] mb-4">{icon}</div>
-      <h3 className="text-h3 text-[var(--color-text-primary)]">{title}</h3>
-      <p className="text-body text-[var(--color-text-secondary)] mt-3">
+      <div className={`mb-4 ${isDark ? "text-[var(--color-accent-pale)]" : "text-[var(--color-accent)]"}`}>{icon}</div>
+      <h3 className={`text-h3 ${isDark ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-dark)]"}`}>{title}</h3>
+      <p className={`text-body mt-3 ${isDark ? "text-[var(--color-text-secondary)]" : "text-[var(--color-text-body-light)]"}`}>
         {description}
       </p>
     </>
   );
 
-  const classes =
-    "block bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] border-l-[3px] border-l-[var(--color-accent)] p-8 transition-all duration-[250ms] hover:bg-[var(--color-bg-card-dark-hover)] hover:-translate-y-1";
+  const classes = isDark
+    ? "block bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] border-l-[3px] border-l-[var(--color-accent)] p-8 transition-all duration-[250ms] hover:bg-[var(--color-bg-card-dark-hover)] hover:-translate-y-1"
+    : "block bg-[var(--color-bg-card-light)] border border-[var(--color-border-card)] border-l-[3px] border-l-[var(--color-accent)] p-8 shadow-sm transition-all duration-[250ms] hover:bg-[var(--color-bg-card-light-hover)] hover:shadow-md hover:-translate-y-1";
 
   return (
     <motion.div

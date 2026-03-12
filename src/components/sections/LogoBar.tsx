@@ -40,7 +40,7 @@ export function LogoBar({ logos = defaultLogos }: LogoBarProps) {
             className="flex items-center justify-center px-4 py-3"
             style={{ minWidth: logo.width ?? 140 }}
           >
-            <span className="text-[14px] font-[500] tracking-wide text-[var(--color-text-muted)] opacity-60 whitespace-nowrap select-none">
+            <span className="text-[14px] font-[500] tracking-wide text-[var(--color-text-body-light)] opacity-70 whitespace-nowrap select-none">
               {logo.name}
             </span>
           </motion.div>

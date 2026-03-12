@@ -76,12 +76,39 @@ const colVariants: Variants = {
 export function GlobalNav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [overLight, setOverLight] = useState(false);
 
   // Detect scroll so bar can subtly increase opacity
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Detect whether the nav bar is over a light or dark section
+  useEffect(() => {
+    const probe = () => {
+      // Sample point: centre-x of viewport, 40px down (middle of the 56px-tall bar)
+      const x = window.innerWidth / 2;
+      const y = 40;
+      // Temporarily hide the header so elementFromPoint hits the section beneath
+      const header = document.querySelector("header");
+      if (header) (header as HTMLElement).style.pointerEvents = "none";
+      const el = document.elementFromPoint(x, y);
+      if (header) (header as HTMLElement).style.pointerEvents = "";
+      if (!el) return;
+      const section = el.closest("[data-theme]");
+      setOverLight(section?.getAttribute("data-theme") === "light");
+    };
+
+    probe();
+    const onScroll = () => requestAnimationFrame(probe);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", probe, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", probe);
+    };
   }, []);
 
   // Lock body scroll when overlay is open
@@ -107,19 +134,21 @@ export function GlobalNav() {
       <header
         className={`fixed top-3 left-3 right-3 z-[100] rounded-[4px] border transition-all duration-[250ms] ${
           open
-            ? "bg-[rgba(10,5,21,1)] border-[var(--color-border-dark)] shadow-none"
+            ? "bg-[rgba(255,255,255,0.12)] border-[rgba(255,255,255,0.15)] shadow-none"
             : scrolled
-            ? "bg-[rgba(10,5,21,0.96)] border-[var(--color-border-dark)] shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-            : "bg-[rgba(10,5,21,0.78)] border-[rgba(46,26,82,0.55)] shadow-[0_2px_12px_rgba(0,0,0,0.25)]"
+            ? "bg-[rgba(255,255,255,0.08)] border-[rgba(255,255,255,0.1)] shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
+            : "bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.08)] shadow-[0_2px_12px_rgba(0,0,0,0.08)]"
         }`}
-        style={{ backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)" }}
+        style={{ backdropFilter: "blur(16px) saturate(1.4)", WebkitBackdropFilter: "blur(16px) saturate(1.4)" }}
       >
-        <div className="flex items-center justify-between h-[52px] px-5">
+        <div className="flex items-center justify-between h-[56px] px-5">
           {/* Logo */}
           <Link
             href="/"
             onClick={close}
-            className="text-white font-[600] text-[18px] tracking-[-0.5px] hover:opacity-75 transition-opacity duration-[150ms]"
+            className={`font-[600] text-[18px] tracking-[-0.5px] hover:opacity-75 transition-all duration-[250ms] ${
+              open ? "text-white" : overLight ? "text-[var(--color-accent)]" : "text-white"
+            }`}
           >
             Stairpay
           </Link>
@@ -135,7 +164,13 @@ export function GlobalNav() {
 
             {/* Search */}
             <button
-              className="p-2 text-[var(--color-text-muted)] hover:text-white transition-colors duration-[150ms]"
+              className={`p-2 transition-colors duration-[250ms] ${
+                open
+                  ? "text-[var(--color-text-muted)] hover:text-white"
+                  : overLight
+                  ? "text-[#666] hover:text-[var(--color-accent)]"
+                  : "text-[var(--color-text-muted)] hover:text-white"
+              }`}
               aria-label="Search"
             >
               <Search size={16} strokeWidth={1.5} />
@@ -144,7 +179,13 @@ export function GlobalNav() {
             {/* Hamburger / X */}
             <button
               onClick={() => setOpen((v) => !v)}
-              className="p-2 text-[var(--color-text-secondary)] hover:text-white transition-colors duration-[150ms]"
+              className={`p-2 transition-colors duration-[250ms] ${
+                open
+                  ? "text-[var(--color-text-secondary)] hover:text-white"
+                  : overLight
+                  ? "text-[#666] hover:text-[var(--color-accent)]"
+                  : "text-[var(--color-text-secondary)] hover:text-white"
+              }`}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >

@@ -15,9 +15,12 @@ interface Persona {
 
 interface PersonaTileGridProps {
   personas: Persona[];
+  theme?: "dark" | "light";
 }
 
-export function PersonaTileGrid({ personas }: PersonaTileGridProps) {
+export function PersonaTileGrid({ personas, theme = "light" }: PersonaTileGridProps) {
+  const isDark = theme === "dark";
+
   return (
     <Container>
       <motion.div
@@ -32,25 +35,33 @@ export function PersonaTileGrid({ personas }: PersonaTileGridProps) {
             key={persona.title}
             href={persona.href}
             variants={fadeUp}
-            className="group block bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] p-8 transition-all duration-[250ms] hover:bg-[var(--color-bg-card-dark-hover)] hover:-translate-y-1"
+            className={`group block p-8 border transition-all duration-[250ms] hover:-translate-y-1 ${
+              isDark
+                ? "bg-[var(--color-bg-card-dark)] border-[var(--color-border-dark)] hover:bg-[var(--color-bg-card-dark-hover)]"
+                : "bg-[var(--color-bg-card-light)] border-[var(--color-border-card)] shadow-sm hover:bg-[var(--color-bg-card-light-hover)] hover:shadow-md"
+            }`}
           >
-            <div className="text-[var(--color-accent-pale)] mb-5">
+            <div className={isDark ? "text-[var(--color-accent-pale)] mb-5" : "text-[var(--color-accent)] mb-5"}>
               {persona.icon}
             </div>
 
-            <h3 className="text-h3 text-[var(--color-text-primary)]">
+            <h3 className={`text-h3 ${isDark ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-dark)]"}`}>
               {persona.title}
             </h3>
 
-            <p className="text-small text-[var(--color-text-muted)] mt-3">
+            <p className={`text-small mt-3 ${isDark ? "text-[var(--color-text-muted)]" : "text-[var(--color-text-body-light)]"}`}>
               {persona.pain}
             </p>
 
-            <p className="text-body text-[var(--color-text-secondary)] mt-3">
+            <p className={`text-body mt-3 ${isDark ? "text-[var(--color-text-secondary)]" : "text-[var(--color-text-body)]"}`}>
               {persona.outcome}
             </p>
 
-            <span className="inline-flex items-center gap-2 mt-6 text-[13px] font-[500] text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors duration-[150ms]">
+            <span className={`inline-flex items-center gap-2 mt-6 text-[13px] font-[500] transition-colors duration-[150ms] ${
+              isDark
+                ? "text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]"
+                : "text-[var(--color-text-body-light)] group-hover:text-[var(--color-accent)]"
+            }`}>
               Learn more
               <ArrowRight size={14} strokeWidth={1.5} className="transition-transform duration-[150ms] group-hover:translate-x-1" />
             </span>

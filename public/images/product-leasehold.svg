@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <pattern id="l-xhatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#7114E2" stroke-width="0.5" opacity="0.6"/>
+      <line x1="0" y1="0" x2="8" y2="0" stroke="#7114E2" stroke-width="0.5" opacity="0.6"/>
+    </pattern>
+    <pattern id="l-dots" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.7" fill="#7114E2" opacity="0.55"/>
+    </pattern>
+    <pattern id="l-diag" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(135)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#7114E2" stroke-width="0.4" opacity="0.5"/>
+    </pattern>
+  </defs>
+  <!-- Construction lines -->
+  <line x1="200" y1="0" x2="200" y2="400" stroke="#D4D4D4" stroke-width="0.4" stroke-dasharray="2,4"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="#D4D4D4" stroke-width="0.4" stroke-dasharray="2,4"/>
+  <line x1="50" y1="0" x2="350" y2="400" stroke="#D4D4D4" stroke-width="0.3" stroke-dasharray="3,6"/>
+  <line x1="0" y1="120" x2="400" y2="120" stroke="#D4D4D4" stroke-width="0.3" stroke-dasharray="1,5"/>
+  <!-- Corner marks -->
+  <g stroke="#D4D4D4" stroke-width="0.5" opacity="0.4">
+    <line x1="25" y1="25" x2="40" y2="25"/><line x1="25" y1="25" x2="25" y2="40"/>
+    <line x1="375" y1="25" x2="360" y2="25"/><line x1="375" y1="25" x2="375" y2="40"/>
+    <line x1="25" y1="375" x2="40" y2="375"/><line x1="25" y1="375" x2="25" y2="360"/>
+    <line x1="375" y1="375" x2="360" y2="375"/><line x1="375" y1="375" x2="375" y2="360"/>
+  </g>
+  <!-- Document 1 (top) -->
+  <polygon points="140,105 220,65 300,105 220,145" fill="none" stroke="#7114E2" stroke-width="1.2" opacity="0.9"/>
+  <polygon points="140,105 220,145 220,165 140,125" fill="#7114E2" fill-opacity="0.15" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <polygon points="140,105 220,145 220,165 140,125" fill="url(#l-xhatch)"/>
+  <polygon points="300,105 220,145 220,165 300,125" fill="#7114E2" fill-opacity="0.2" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <polygon points="300,105 220,145 220,165 300,125" fill="url(#l-dots)"/>
+  <!-- Text lines on doc -->
+  <line x1="172" y1="95" x2="218" y2="117" stroke="#7114E2" stroke-width="1" opacity="0.6"/>
+  <line x1="180" y1="101" x2="222" y2="122" stroke="#7114E2" stroke-width="0.8" opacity="0.5"/>
+  <line x1="188" y1="107" x2="226" y2="127" stroke="#7114E2" stroke-width="0.7" opacity="0.45"/>
+  <line x1="234" y1="113" x2="272" y2="131" stroke="#7114E2" stroke-width="0.8" opacity="0.5"/>
+  <circle cx="262" cy="118" r="7" fill="none" stroke="#7114E2" stroke-width="0.8" opacity="0.55"/>
+  <!-- Document 2 (mid) -->
+  <polygon points="148,130 228,90 308,130 228,170" fill="#7114E2" fill-opacity="0.12" stroke="#7114E2" stroke-width="1" opacity="0.75"/>
+  <polygon points="148,130 228,170 228,190 148,150" fill="url(#l-diag)" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <polygon points="308,130 228,170 228,190 308,150" fill="url(#l-xhatch)" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <!-- Document 3 (bottom) -->
+  <polygon points="155,155 235,115 315,155 235,195" fill="#7114E2" fill-opacity="0.15" stroke="#7114E2" stroke-width="0.8" opacity="0.65"/>
+  <polygon points="155,155 235,195 235,215 155,175" fill="url(#l-xhatch)" stroke="#7114E2" stroke-width="0.7" opacity="0.6"/>
+  <polygon points="315,155 235,195 235,215 315,175" fill="url(#l-dots)" stroke="#7114E2" stroke-width="0.7" opacity="0.6"/>
+  <!-- Data flow lines -->
+  <path d="M228,190 C228,218 218,235 200,252" stroke="#7114E2" stroke-width="1.5" fill="none" opacity="0.65" stroke-dasharray="4,3"/>
+  <path d="M238,195 C248,225 258,242 260,258" stroke="#7114E2" stroke-width="1.2" fill="none" opacity="0.55" stroke-dasharray="3,3"/>
+  <path d="M218,195 C208,222 188,240 170,256" stroke="#7114E2" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="3,3"/>
+  <!-- Data particles -->
+  <rect x="224" y="215" width="4" height="4" fill="#7114E2" opacity="0.65" transform="rotate(30,226,217)"/>
+  <circle cx="215" cy="228" r="1.5" fill="#7114E2" opacity="0.55"/>
+  <rect x="246" y="232" width="3" height="3" fill="#7114E2" opacity="0.55" transform="rotate(15,248,234)"/>
+  <!-- Grid blocks -->
+  <polygon points="150,268 190,248 230,268 190,288" fill="url(#l-xhatch)" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <polygon points="150,268 190,288 190,303 150,283" fill="#7114E2" fill-opacity="0.3" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <polygon points="230,268 190,288 190,303 230,283" fill="#7114E2" fill-opacity="0.4" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <polygon points="230,268 270,248 310,268 270,288" fill="url(#l-dots)" stroke="#7114E2" stroke-width="1" opacity="0.8"/>
+  <polygon points="230,268 270,288 270,303 230,283" fill="#7114E2" fill-opacity="0.2" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <polygon points="310,268 270,288 270,303 310,283" fill="#7114E2" fill-opacity="0.35" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <polygon points="130,290 170,270 210,290 170,310" fill="url(#l-dots)" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <polygon points="130,290 170,310 170,323 130,303" fill="#7114E2" fill-opacity="0.25" stroke="#7114E2" stroke-width="0.7" opacity="0.6"/>
+  <polygon points="210,290 170,310 170,323 210,303" fill="#7114E2" fill-opacity="0.38" stroke="#7114E2" stroke-width="0.7" opacity="0.6"/>
+  <polygon points="210,290 250,270 290,290 250,310" fill="url(#l-xhatch)" stroke="#7114E2" stroke-width="0.8" opacity="0.7"/>
+  <polygon points="210,290 250,310 250,323 210,303" fill="#7114E2" fill-opacity="0.2" stroke="#7114E2" stroke-width="0.7" opacity="0.6"/>
+  <polygon points="290,290 250,310 250,323 290,303" fill="#7114E2" fill-opacity="0.32" stroke="#7114E2" stroke-width="0.7" opacity="0.6"/>
+  <!-- Dimension annotations -->
+  <line x1="115" y1="70" x2="115" y2="220" stroke="#7114E2" stroke-width="0.5" opacity="0.5"/>
+  <line x1="111" y1="70" x2="119" y2="70" stroke="#7114E2" stroke-width="0.5" opacity="0.5"/>
+  <line x1="111" y1="220" x2="119" y2="220" stroke="#7114E2" stroke-width="0.5" opacity="0.5"/>
+  <!-- Crosshair -->
+  <line x1="196" y1="230" x2="204" y2="230" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="200" y1="226" x2="200" y2="234" stroke="#D4D4D4" stroke-width="0.5"/>
+  <circle cx="200" cy="230" r="3" fill="none" stroke="#D4D4D4" stroke-width="0.4"/>
+</svg>

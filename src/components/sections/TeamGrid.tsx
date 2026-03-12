@@ -12,6 +12,7 @@ interface TeamMember {
 
 interface TeamGridProps {
   members: TeamMember[];
+  theme?: "dark" | "light";
 }
 
 function getInitials(name: string): string {
@@ -23,7 +24,9 @@ function getInitials(name: string): string {
     .slice(0, 2);
 }
 
-export function TeamGrid({ members }: TeamGridProps) {
+export function TeamGrid({ members, theme = "light" }: TeamGridProps) {
+  const isDark = theme === "dark";
+
   return (
     <Container>
       <motion.div
@@ -37,25 +40,29 @@ export function TeamGrid({ members }: TeamGridProps) {
           <motion.div
             key={member.name}
             variants={fadeUp}
-            className="bg-[var(--color-bg-card-dark)] border border-[var(--color-border-dark)] p-8 transition-all duration-[250ms] hover:bg-[var(--color-bg-card-dark-hover)] hover:-translate-y-1"
+            className={`p-8 border transition-all duration-[250ms] hover:-translate-y-1 ${
+              isDark
+                ? "bg-[var(--color-bg-card-dark)] border-[var(--color-border-dark)] hover:bg-[var(--color-bg-card-dark-hover)]"
+                : "bg-[var(--color-bg-card-light)] border-[var(--color-border-card)] shadow-sm hover:bg-[var(--color-bg-card-light-hover)] hover:shadow-md"
+            }`}
           >
             {/* Avatar placeholder */}
             <div className="w-16 h-16 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center mb-5">
-              <span className="text-[15px] font-[500] text-[var(--color-accent-pale)]">
+              <span className={`text-[15px] font-[500] ${isDark ? "text-[var(--color-accent-pale)]" : "text-[var(--color-accent)]"}`}>
                 {getInitials(member.name)}
               </span>
             </div>
 
-            <h3 className="text-h3 text-[var(--color-text-primary)]">
+            <h3 className={`text-h3 ${isDark ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-dark)]"}`}>
               {member.name}
             </h3>
 
-            <p className="text-small text-[var(--color-accent-pale)] mt-1">
+            <p className={`text-small mt-1 ${isDark ? "text-[var(--color-accent-pale)]" : "text-[var(--color-accent)]"}`}>
               {member.role}
             </p>
 
             {member.bio && (
-              <p className="text-body text-[var(--color-text-secondary)] mt-4">
+              <p className={`text-body mt-4 ${isDark ? "text-[var(--color-text-secondary)]" : "text-[var(--color-text-body)]"}`}>
                 {member.bio}
               </p>
             )}

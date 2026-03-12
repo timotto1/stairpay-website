@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "secondary-dark" | "ghost";
 type Size = "lg" | "md" | "sm";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,11 +18,13 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)] hover:-translate-y-px",
+    "bg-white text-[var(--color-bg-primary)] hover:bg-white/90 hover:-translate-y-px",
   secondary:
+    "bg-transparent border border-[var(--color-border-light)] text-[var(--color-text-body)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-light)]",
+  "secondary-dark":
     "bg-transparent border border-[var(--color-text-muted)] text-white hover:border-[var(--color-text-secondary)] hover:bg-white/5",
   ghost:
-    "bg-transparent text-[var(--color-text-secondary)] hover:text-white group",
+    "bg-transparent text-[var(--color-text-body-light)] hover:text-[var(--color-accent)] group",
 };
 
 const sizes: Record<Size, string> = {

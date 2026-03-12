@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { fadeUp, stagger, viewport } from "@/lib/animations";
+import { LogoTicker } from "@/components/sections/LogoTicker";
 
 interface CTAProps {
   label: string;
@@ -12,14 +13,16 @@ interface CTAProps {
 }
 
 interface HeroSectionProps {
-  eyebrow: string;
+  eyebrow?: string;
   headline: string;
   description: string;
-  primaryCta: CTAProps;
+  primaryCta?: CTAProps;
   secondaryCta?: CTAProps;
   children?: React.ReactNode;
   theme?: "dark" | "light";
   centered?: boolean;
+  videoSources?: string[];
+  logoTicker?: string[];
 }
 
 export function HeroSection({
@@ -31,19 +34,42 @@ export function HeroSection({
   children,
   theme = "dark",
   centered = false,
+  videoSources,
+  logoTicker,
 }: HeroSectionProps) {
   const isDark = theme === "dark";
   const hasVisual = !!children;
-  const isCentered = centered || !hasVisual;
+  const hasVideo = videoSources && videoSources.length > 0;
+  const isCentered = centered || !hasVisual || hasVideo;
 
   return (
     <section
-      className={`relative min-h-[90vh] flex items-center overflow-hidden ${
+      data-theme={isDark ? "dark" : "light"}
+      className={`relative min-h-[100vh] flex items-center overflow-hidden ${
         isDark ? "bg-[var(--color-bg-primary)]" : "bg-[var(--color-bg-surface)]"
       }`}
     >
-      {/* Radial glow */}
-      {isDark && (
+      {/* Video background */}
+      {hasVideo && (
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            {videoSources.map((src) => (
+              <source key={src} src={src} type="video/mp4" />
+            ))}
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+      )}
+
+      {/* Radial glow (only when no video) */}
+      {isDark && !hasVideo && (
         <div
           className="pointer-events-none absolute inset-0"
           aria-hidden="true"
@@ -66,18 +92,22 @@ export function HeroSection({
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            className={isCentered ? "max-w-[680px] mx-auto text-center" : ""}
+            className={isCentered ? "max-w-[780px] mx-auto text-center" : ""}
           >
-            <motion.div variants={fadeUp}>
-              <Badge>{eyebrow}</Badge>
-            </motion.div>
+            {eyebrow && (
+              <motion.div variants={fadeUp}>
+                <Badge>{eyebrow}</Badge>
+              </motion.div>
+            )}
 
             <motion.h1
               variants={fadeUp}
-              className={`text-display mt-6 ${
-                isDark
-                  ? "text-[var(--color-text-primary)]"
-                  : "text-[var(--color-text-dark)]"
+              className={`text-display ${eyebrow ? "mt-6" : ""} ${
+                hasVideo
+                  ? "text-white/90 font-[200]"
+                  : isDark
+                    ? "text-[var(--color-text-primary)]"
+                    : "text-[var(--color-text-dark)]"
               }`}
             >
               {headline}
@@ -88,29 +118,35 @@ export function HeroSection({
               className={`text-subheading mt-6 max-w-[540px] ${
                 isCentered ? "mx-auto" : ""
               } ${
-                isDark
-                  ? "text-[var(--color-text-secondary)]"
-                  : "text-[var(--color-text-body)]"
+                hasVideo
+                  ? "text-white/80"
+                  : isDark
+                    ? "text-[var(--color-text-secondary)]"
+                    : "text-[var(--color-text-body)]"
               }`}
             >
               {description}
             </motion.p>
 
-            <motion.div
-              variants={fadeUp}
-              className={`mt-10 flex gap-4 flex-wrap ${
-                isCentered ? "justify-center" : ""
-              }`}
-            >
-              <Button variant="primary" size="lg" href={primaryCta.href}>
-                {primaryCta.label}
-              </Button>
-              {secondaryCta && (
-                <Button variant="secondary" size="lg" href={secondaryCta.href}>
-                  {secondaryCta.label}
-                </Button>
-              )}
-            </motion.div>
+            {(primaryCta || secondaryCta) && (
+              <motion.div
+                variants={fadeUp}
+                className={`mt-10 flex gap-4 flex-wrap ${
+                  isCentered ? "justify-center" : ""
+                }`}
+              >
+                {primaryCta && (
+                  <Button variant="primary" size="lg" href={primaryCta.href}>
+                    {primaryCta.label}
+                  </Button>
+                )}
+                {secondaryCta && (
+                  <Button variant={isDark || hasVideo ? "secondary-dark" : "secondary"} size="lg" href={secondaryCta.href}>
+                    {secondaryCta.label}
+                  </Button>
+                )}
+              </motion.div>
+            )}
           </motion.div>
 
           {/* Visual column */}
@@ -126,6 +162,11 @@ export function HeroSection({
           )}
         </div>
       </Container>
+
+      {/* Logo ticker at bottom of hero */}
+      {logoTicker && logoTicker.length > 0 && (
+        <LogoTicker logos={logoTicker} />
+      )}
     </section>
   );
 }

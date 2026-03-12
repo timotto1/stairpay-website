@@ -2,28 +2,31 @@
 
 @theme {
   /* ── Colours ───────────────────────────────────────────────── */
-  --color-bg-primary:        #0A0515;
-  --color-bg-secondary:      #26045D;
-  --color-bg-surface:        #F6F3FB;
+  --color-bg-primary:        #111111;
+  --color-bg-secondary:      #1A1A1A;
+  --color-bg-surface:        #F5F5F5;
   --color-bg-white:          #FFFFFF;
-  --color-bg-card-dark:      #130929;
-  --color-bg-card-dark-hover:#1C0E3A;
+  --color-bg-card-dark:      #1A1A1A;
+  --color-bg-card-dark-hover:#242424;
+  --color-bg-card-light:     #FFFFFF;
+  --color-bg-card-light-hover:#F5F5F5;
+  --color-border-card:       #E5E5E5;
 
   --color-accent:            #7114E2;
   --color-accent-hover:      #5C0FBF;
-  --color-accent-light:      rgba(113,20,226,0.12);
-  --color-accent-pale:       #E5DAFB;
+  --color-accent-light:      rgba(113,20,226,0.08);
+  --color-accent-pale:       #E8E0F7;
 
   --color-text-primary:      #FFFFFF;
-  --color-text-secondary:    #B8A9D4;
-  --color-text-muted:        #7B6A9B;
-  --color-text-dark:         #26045D;
-  --color-text-body:         #2E2244;
-  --color-text-body-light:   #5A4D6E;
+  --color-text-secondary:    #A0A0A0;
+  --color-text-muted:        #707070;
+  --color-text-dark:         #111111;
+  --color-text-body:         #333333;
+  --color-text-body-light:   #666666;
 
-  --color-border-dark:       #2E1A52;
-  --color-border-light:      #D8D0E8;
-  --color-border-subtle:     #1E0E3A;
+  --color-border-dark:       #2A2A2A;
+  --color-border-light:      #D4D4D4;
+  --color-border-subtle:     #222222;
 
   /* ── Typography ────────────────────────────────────────────── */
   --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
@@ -56,8 +59,8 @@ html {
 }
 
 body {
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background-color: var(--color-bg-white);
+  color: var(--color-text-body);
   font-family: var(--font-sans);
   font-weight: 300;
   font-size: 16px;
