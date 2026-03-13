@@ -6,12 +6,11 @@ import { Container } from "@/components/layout/Container";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CTABlock } from "@/components/sections/CTABlock";
-import { MetricCalloutGrid } from "@/components/sections/MetricCalloutGrid";
 import { PersonaExplorer } from "@/components/sections/PersonaExplorer";
-import { ContentSection } from "@/components/sections/ContentSection";
 import { StatementBanner } from "@/components/sections/StatementBanner";
 import { ProductShowcase } from "@/components/sections/ProductShowcase";
 import { VisionBanner } from "@/components/sections/VisionBanner";
+import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 
 export const metadata: Metadata = {
   title: "Stairpay — The Operating System for Shared Ownership",
@@ -132,28 +131,10 @@ export default function HomePage() {
         </Container>
       </SectionWrapper>
 
-      {/* ─── 6. Metrics ─── */}
-      <MetricCalloutGrid
-        theme="light"
-        metrics={[
-          { value: "6", label: "Intelligence Layers" },
-          { value: "100%", label: "Lifecycle Coverage" },
-          { value: "£12.4M", label: "Capital Forecast Annually" },
-          { value: "94%", label: "Audit Compliance Rate" },
-        ]}
-      />
+      {/* ─── 5. Testimonials ─── */}
+      <TestimonialCarousel />
 
-      {/* ─── 7. Platform Positioning ─── */}
-      <ContentSection
-        eyebrow="PLATFORM"
-        headline="One Platform. Every Department. Complete Visibility."
-        body="Stairpay replaces the patchwork of disconnected point solutions that most housing associations have accumulated over the past decade. Sales, homeownership, finance, and compliance teams operate from a single source of truth — with structured data flowing between departments rather than trapped in silos. The result is an organisation that can govern its Shared Ownership portfolio with the same rigour it applies to its core social housing stock."
-        image="/images/platform-layers.svg"
-        imageAlt="Stairpay unified platform architecture showing all departments connected through a single intelligence layer"
-        theme="light"
-      />
-
-      {/* ─── 8. Final CTA ─── */}
+      {/* ─── 6. Final CTA ─── */}
       <CTABlock
         headline="Ready to See the Operating System in Action?"
         description="Book a strategic review with our team. We will walk through how Stairpay maps to your organisation's Shared Ownership operations and where the highest-value opportunities lie."

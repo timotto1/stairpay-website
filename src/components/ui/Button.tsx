@@ -21,7 +21,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   outline:
-    "bg-white border border-[#111] text-[#111] hover:bg-[#111] hover:text-white",
+    "bg-white border border-[var(--color-accent-darkest)] text-[var(--color-accent-darkest)] hover:bg-[var(--color-accent-darkest)] hover:text-white",
   "outline-dark":
     "bg-transparent border border-white text-white hover:bg-white hover:text-[#111]",
   "solid-white":

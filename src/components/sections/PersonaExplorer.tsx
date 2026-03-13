@@ -792,7 +792,7 @@ export function PersonaExplorer() {
               transition={{ duration: 0.6, ease: EASE, delay: 0.5 }}
               className="mt-10"
             >
-              <Button variant="outline" size="lg" href="/contact" arrow>
+              <Button variant="solid-white" size="lg" href="/contact" arrow>
                 Chat to the team
               </Button>
             </motion.div>

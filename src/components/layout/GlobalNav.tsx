@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Search, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { IconButton } from "@/components/ui/IconButton";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -163,29 +164,17 @@ export function GlobalNav() {
             </div>
 
             {/* Search */}
-            <button
-              className={`p-2 transition-colors duration-[250ms] ${
-                open
-                  ? "text-[var(--color-text-muted)] hover:text-white"
-                  : overLight
-                  ? "text-[#666] hover:text-[var(--color-accent)]"
-                  : "text-[var(--color-text-muted)] hover:text-white"
-              }`}
+            <IconButton
+              variant={open || !overLight ? "outline-dark" : "solid-white"}
               aria-label="Search"
             >
               <Search size={16} strokeWidth={1.5} />
-            </button>
+            </IconButton>
 
             {/* Hamburger / X */}
-            <button
+            <IconButton
               onClick={() => setOpen((v) => !v)}
-              className={`p-2 transition-colors duration-[250ms] ${
-                open
-                  ? "text-[var(--color-text-secondary)] hover:text-white"
-                  : overLight
-                  ? "text-[#666] hover:text-[var(--color-accent)]"
-                  : "text-[var(--color-text-secondary)] hover:text-white"
-              }`}
+              variant={open || !overLight ? "outline-dark" : "solid-white"}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >
@@ -214,7 +203,7 @@ export function GlobalNav() {
                   </motion.span>
                 )}
               </AnimatePresence>
-            </button>
+            </IconButton>
           </div>
         </div>
       </header>

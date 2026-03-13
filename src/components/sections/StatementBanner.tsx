@@ -36,7 +36,7 @@ export function StatementBanner({ children, theme = "light" }: StatementBannerPr
     <section
       ref={ref}
       data-theme={isDark ? "dark" : "light"}
-      className={`py-24 md:py-32 ${
+      className={`pt-24 md:pt-32 pb-12 md:pb-16 ${
         isDark ? "bg-[var(--color-bg-primary)]" : "bg-[var(--color-bg-white)]"
       }`}
     >
