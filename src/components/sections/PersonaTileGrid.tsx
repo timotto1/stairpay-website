@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { fadeUp, stagger, viewport } from "@/lib/animations";
 
@@ -57,13 +57,13 @@ export function PersonaTileGrid({ personas, theme = "light" }: PersonaTileGridPr
               {persona.outcome}
             </p>
 
-            <span className={`inline-flex items-center gap-2 mt-6 text-[13px] font-[500] transition-colors duration-[150ms] ${
+            <span className={`inline-flex items-center gap-2 mt-6 text-[13px] font-[500] tracking-wide uppercase transition-colors duration-[150ms] ${
               isDark
                 ? "text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]"
                 : "text-[var(--color-text-body-light)] group-hover:text-[var(--color-accent)]"
             }`}>
               Learn more
-              <ArrowRight size={14} strokeWidth={1.5} className="transition-transform duration-[150ms] group-hover:translate-x-1" />
+              <ArrowUpRight size={14} strokeWidth={1.5} className="transition-transform duration-[150ms] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </motion.a>
         ))}

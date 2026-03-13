@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/Button";
 import { fadeUp, viewport } from "@/lib/animations";
 
 export function VisionBanner() {
@@ -39,12 +39,9 @@ export function VisionBanner() {
           <p className="mt-5 max-w-[420px] text-[15px] md:text-[16px] font-[400] leading-[1.6] text-[var(--color-text-body-light)]">
             Our vision is a single source of truth for every shared ownership home — where every event is audited, every obligation is met, and residents are genuinely cared for.
           </p>
-          <Link
-            href="/company/customers"
-            className="mt-8 inline-block border border-[var(--color-text-dark)] text-[var(--color-text-dark)] text-[13px] md:text-[14px] font-[400] tracking-[0.04em] uppercase px-7 py-3 rounded-sm hover:bg-[var(--color-text-dark)] hover:text-white transition-colors duration-300"
-          >
+          <Button variant="outline" size="md" href="/company/customers" arrow className="mt-8">
             Learn More
-          </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

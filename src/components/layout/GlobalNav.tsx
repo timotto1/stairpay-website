@@ -157,7 +157,7 @@ export function GlobalNav() {
           <div className="flex items-center gap-2">
             {/* CTA — hidden on very small screens */}
             <div className="hidden sm:block">
-              <Button href="/contact" size="sm" onClick={close}>
+              <Button href="/contact" size="sm" variant="solid-white" onClick={close} arrow>
                 Book a Strategic Review
               </Button>
             </div>
@@ -376,7 +376,7 @@ export function GlobalNav() {
 
               {/* CTA in quick links row on mobile (where bar CTA is hidden) */}
               <div className="sm:hidden ml-auto">
-                <Button href="/contact" size="sm" onClick={close}>
+                <Button href="/contact" size="sm" variant="solid-white" onClick={close} arrow>
                   Book a Strategic Review
                 </Button>
               </div>

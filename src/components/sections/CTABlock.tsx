@@ -78,7 +78,7 @@ export function CTABlock({
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-10">
-            <Button variant="primary" size="lg" href={ctaHref}>
+            <Button variant={isDark ? "outline-dark" : "outline"} size="lg" href={ctaHref} arrow>
               {ctaLabel}
             </Button>
           </motion.div>

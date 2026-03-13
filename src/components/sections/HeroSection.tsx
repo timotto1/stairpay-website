@@ -1,11 +1,35 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { fadeUp, stagger, viewport } from "@/lib/animations";
+import { fadeUp, viewport } from "@/lib/animations";
 import { LogoTicker } from "@/components/sections/LogoTicker";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+const heroStagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.2, delayChildren: 0.4 } },
+};
+
+const phraseVariant = (delay: number): Variants => ({
+  hidden: { y: "100%" },
+  visible: {
+    y: "0%",
+    transition: { duration: 1, ease: EASE, delay },
+  },
+});
+
+const heroFadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1.2, ease: EASE },
+  },
+};
 
 interface CTAProps {
   label: string;
@@ -49,9 +73,9 @@ export function HeroSection({
         isDark ? "bg-[var(--color-bg-primary)]" : "bg-[var(--color-bg-surface)]"
       }`}
     >
-      {/* Video background */}
+      {/* Video background — fixed so it stays while content scrolls over */}
       {hasVideo && (
-        <div className="absolute inset-0 z-0">
+        <div className="fixed inset-0 z-0">
           <video
             autoPlay
             muted
@@ -88,60 +112,77 @@ export function HeroSection({
         >
           {/* Text column */}
           <motion.div
-            variants={stagger(0.12, 0.1)}
+            variants={heroStagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
             className={isCentered ? "max-w-[780px] mx-auto text-center" : ""}
           >
             {eyebrow && (
-              <motion.div variants={fadeUp}>
+              <motion.div variants={heroFadeUp}>
                 <Badge>{eyebrow}</Badge>
               </motion.div>
             )}
 
-            <motion.h1
-              variants={fadeUp}
-              className={`text-display ${eyebrow ? "mt-6" : ""} ${
-                hasVideo
-                  ? "text-white/90 font-[200]"
-                  : isDark
+            {hasVideo ? (
+              <h1
+                className={`text-[clamp(24px,4.2vw,72px)] font-[300] tracking-[-2px] leading-[1.05] text-white/90 whitespace-nowrap ${eyebrow ? "mt-6" : ""}`}
+              >
+                <span className="block overflow-hidden">
+                  <motion.span variants={phraseVariant(0)} className="block">
+                    End-to-End Infrastructure
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden">
+                  <motion.span variants={phraseVariant(0.35)} className="block">
+                    Built for Shared Ownership
+                  </motion.span>
+                </span>
+              </h1>
+            ) : (
+              <motion.h1
+                variants={heroFadeUp}
+                className={`text-display ${eyebrow ? "mt-6" : ""} ${
+                  isDark
                     ? "text-[var(--color-text-primary)]"
                     : "text-[var(--color-text-dark)]"
-              }`}
-            >
-              {headline}
-            </motion.h1>
+                }`}
+              >
+                {headline}
+              </motion.h1>
+            )}
 
-            <motion.p
-              variants={fadeUp}
-              className={`text-subheading mt-6 max-w-[540px] ${
-                isCentered ? "mx-auto" : ""
-              } ${
-                hasVideo
-                  ? "text-white/80"
-                  : isDark
-                    ? "text-[var(--color-text-secondary)]"
-                    : "text-[var(--color-text-body)]"
-              }`}
-            >
-              {description}
-            </motion.p>
+            {description && (
+              <motion.p
+                variants={heroFadeUp}
+                className={`text-subheading mt-6 max-w-[540px] ${
+                  isCentered ? "mx-auto" : ""
+                } ${
+                  hasVideo
+                    ? "text-white/80"
+                    : isDark
+                      ? "text-[var(--color-text-secondary)]"
+                      : "text-[var(--color-text-body)]"
+                }`}
+              >
+                {description}
+              </motion.p>
+            )}
 
             {(primaryCta || secondaryCta) && (
               <motion.div
-                variants={fadeUp}
+                variants={heroFadeUp}
                 className={`mt-10 flex gap-4 flex-wrap ${
                   isCentered ? "justify-center" : ""
                 }`}
               >
                 {primaryCta && (
-                  <Button variant="primary" size="lg" href={primaryCta.href}>
+                  <Button variant="solid-white" size="lg" href={primaryCta.href} arrow>
                     {primaryCta.label}
                   </Button>
                 )}
                 {secondaryCta && (
-                  <Button variant={isDark || hasVideo ? "secondary-dark" : "secondary"} size="lg" href={secondaryCta.href}>
+                  <Button variant={isDark || hasVideo ? "outline-dark" : "outline"} size="lg" href={secondaryCta.href} arrow>
                     {secondaryCta.label}
                   </Button>
                 )}

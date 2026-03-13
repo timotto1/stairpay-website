@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { fadeUp, viewport } from "@/lib/animations";
 
 interface InsightCardProps {
@@ -60,16 +60,16 @@ export function InsightCard({
         <span className={`text-small ${isDark ? "text-[var(--color-text-muted)]" : "text-[var(--color-text-body-light)]"}`}>
           {date}
         </span>
-        <span className={`inline-flex items-center gap-2 text-[13px] font-[500] transition-colors duration-[150ms] ${
+        <span className={`inline-flex items-center gap-2 text-[13px] font-[500] tracking-wide uppercase transition-colors duration-[150ms] ${
           isDark
             ? "text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]"
             : "text-[var(--color-text-body-light)] group-hover:text-[var(--color-accent)]"
         }`}>
           Read
-          <ArrowRight
+          <ArrowUpRight
             size={14}
             strokeWidth={1.5}
-            className="transition-transform duration-[150ms] group-hover:translate-x-1"
+            className="transition-transform duration-[150ms] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
         </span>
       </div>

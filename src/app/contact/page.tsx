@@ -167,7 +167,7 @@ export default function ContactPage() {
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="pt-2">
-                      <Button type="submit" variant="primary" size="lg">
+                      <Button type="submit" variant="solid-white" size="lg">
                         Request a Strategic Review
                       </Button>
                     </motion.div>
