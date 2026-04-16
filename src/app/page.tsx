@@ -11,6 +11,7 @@ import { StatementBanner } from "@/components/sections/StatementBanner";
 import { ProductShowcase } from "@/components/sections/ProductShowcase";
 import { VisionBanner } from "@/components/sections/VisionBanner";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
+import { ResidentJourney } from "@/components/sections/ResidentJourney";
 
 export const metadata: Metadata = {
   title: "Stairpay — The Operating System for Shared Ownership",
@@ -79,7 +80,7 @@ export default function HomePage() {
             video: "/videos/product-1.mov",
           },
           {
-            name: "Leasehold",
+            name: "Data Intelligence",
             tagline: "Documents into queryable intelligence.",
             description: "AI-powered extraction processes thousands of lease documents into structured, searchable data — surfacing key dates, clauses, and obligations so your team can act on portfolio-wide intelligence instead of reading PDFs one by one.",
             href: "/intelligence-layers/lease",
@@ -124,6 +125,9 @@ export default function HomePage() {
       {/* ─── 2c. Vision Banner ─── */}
       <VisionBanner />
 
+      {/* ─── 2d. Resident Journey ─── */}
+      <ResidentJourney />
+
       {/* ─── 3. Persona Explorer ─── */}
       <SectionWrapper theme="white" id="for-providers">
         <Container>
@@ -138,8 +142,7 @@ export default function HomePage() {
       <CTABlock
         headline="Ready to See the Operating System in Action?"
         description="Book a strategic review with our team. We will walk through how Stairpay maps to your organisation's Shared Ownership operations and where the highest-value opportunities lie."
-        ctaLabel="Book a Strategic Review"
-        ctaHref="/contact"
+        primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
         theme="dark"
       />
 

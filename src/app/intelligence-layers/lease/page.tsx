@@ -1,251 +1,206 @@
-import Image from "next/image";
 import type { Metadata } from "next";
-import {
-  FileText,
-  ScanSearch,
-  UserCheck,
-  ShieldCheck,
-  MessageSquareText,
-  TrendingUp,
-  BarChart3,
-  PieChart,
-} from "lucide-react";
-
 import { GlobalNav } from "@/components/layout/GlobalNav";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ApproachSection } from "@/components/sections/ApproachSection";
-import { ContentSection } from "@/components/sections/ContentSection";
-import { OutcomesGrid } from "@/components/sections/OutcomesGrid";
-import { MetricCalloutGrid } from "@/components/sections/MetricCalloutGrid";
-import { IntelligenceLayerCard } from "@/components/sections/IntelligenceLayerCard";
 import { CTABlock } from "@/components/sections/CTABlock";
+import { Badge } from "@/components/ui/Badge";
+import { CornerstoneHeroVisual } from "@/components/visuals/CornerstoneHeroVisual";
+import { GridTravellers } from "@/components/visuals/GridTraveller";
+import { CapabilityOverview } from "@/components/sections/CapabilityOverview";
+import { TypeWriter } from "@/components/ui/TypeWriter";
+import { DocumentExtraction } from "@/components/sections/DocumentExtraction";
 
 export const metadata: Metadata = {
-  title: "Lease Intelligence — Stairpay",
+  title: "Stairpay Cornerstone — Your Living System of Record",
   description:
-    "Structured lease data extraction with source-text verification. Transform thousands of shared ownership lease documents into queryable, auditable intelligence.",
-  openGraph: {
-    title: "Lease Intelligence — Stairpay",
-    description:
-      "Structured lease data extraction with source-text verification for shared ownership portfolios.",
-    type: "website",
-    locale: "en_GB",
-    siteName: "Stairpay",
-  },
+    "Cornerstone allows you to build and maintain the foundational data and pipelines to empower your organisation.",
 };
 
-export default function LeaseIntelligencePage() {
+
+const detailBlocks = [
+  {
+    number: "01",
+    heading: "Clean messy data",
+    intro: "Cornerstone ingests historical records and normalises them against your data model — no matter the format. What used to take weeks of manual reconciliation becomes a structured, repeatable process.",
+    subs: [
+      {
+        title: "Legacy ingestion",
+        body: "Shared ownership portfolios carry years of data in inconsistent formats, missing fields, and information locked in PDFs and scanned documents. Cornerstone processes these records automatically and maps them to your data model.",
+      },
+      {
+        title: "Anomaly detection",
+        body: "Records that don't match expected patterns are flagged for review rather than silently accepted. Your team resolves exceptions from a structured queue instead of discovering problems months later.",
+      },
+    ],
+  },
+  {
+    number: "02",
+    heading: "Automate data updates",
+    intro: "When portfolio events happen, your records update themselves. Ownership percentages, rent charges, and resident details stay current without manual intervention.",
+    subs: [
+      {
+        title: "Event-driven updates",
+        body: "Cornerstone connects directly to the events that trigger changes — staircasing transactions, valuations, resident moves. When something happens, every dependent field updates together, in real time.",
+      },
+      {
+        title: "End-to-end consistency",
+        body: "When a staircasing transaction completes, the ownership share, rent charge, and resident record update as a single operation. No one needs to remember to update a spreadsheet.",
+      },
+    ],
+  },
+  {
+    number: "03",
+    heading: "Act on compliance before it's due",
+    intro: "Cornerstone tracks every compliance milestone across your portfolio and surfaces what needs attention before it becomes overdue. Your team works from a forward-looking schedule, not a reactive one.",
+    subs: [
+      {
+        title: "Portfolio-wide tracking",
+        body: "Lease event dates, regulatory reporting deadlines, and resident communication obligations are monitored across every property. Nothing depends on someone remembering to check.",
+      },
+      {
+        title: "Forward-looking visibility",
+        body: "Your team sees what's coming, what's due, and what's been completed — moving from chasing missed deadlines to managing a structured calendar of obligations.",
+      },
+    ],
+  },
+  {
+    number: "04",
+    heading: "Automate repeated workflows",
+    intro: "Every housing association has processes that follow the same pattern hundreds of times a year. Cornerstone turns them into configurable workflows that execute consistently, every time.",
+    subs: [
+      {
+        title: "Configurable execution",
+        body: "Annual rent reviews, statement generation, resident correspondence, internal approvals — these become defined workflows that run without manual effort.",
+      },
+      {
+        title: "Human judgement where it matters",
+        body: "Your team focuses on the cases that need thought, not the ones that just need the same steps followed in the same order.",
+      },
+    ],
+  },
+  {
+    number: "05",
+    heading: "Build a complete audit trail",
+    intro: "Every field change, every automated update, every manual override — logged, timestamped, and attributed. Cornerstone maintains an immutable record of what changed, when, by whom, and why.",
+    subs: [
+      {
+        title: "Immutable record",
+        body: "Full traceability is built into the system, not bolted on after the fact. Every change is captured with who made it, when, and the reason.",
+      },
+      {
+        title: "Instant answers",
+        body: "When auditors ask questions, when the board wants assurance, when a resident queries their record — the answer is already there. No reconstructing history from email threads and file versions.",
+      },
+    ],
+  },
+];
+
+
+export default function DataIntelligencePage() {
   return (
     <>
       <GlobalNav />
+      <main>
+        {/* ─── 1. Hero ─── */}
+        <HeroSection
+          eyebrow="DATA INTELLIGENCE"
+          headline={
+            <span className="relative block">
+              <span className="invisible block" aria-hidden="true">Stairpay</span>
+              <span className="invisible block" aria-hidden="true">Cornerstone</span>
+              <span className="absolute left-0 top-0 block">
+                <span className="block"><TypeWriter text="Stairpay" speed={12} startOnMount delay={800} /></span>
+                <span className="block"><TypeWriter text="Cornerstone" speed={12} startOnMount delay={896} /></span>
+              </span>
+            </span>
+          }
+          description="Stairpay's AI platform turns messy, disorganised files into a living digital record of your portfolio — always accurate, always up to date."
+          primaryCta={{ label: "Watch the Demo", href: "/contact" }}
+          theme="dark"
+          centered={false}
+          decoration={<GridTravellers />}
+        >
+          <CornerstoneHeroVisual />
+        </HeroSection>
 
-      {/* ─── 1. Hero ─── */}
-      <HeroSection
-        eyebrow="LEASE INTELLIGENCE"
-        headline="The Structured Foundation for Every Decision"
-        description="Every shared ownership lease is unique. Stairpay extracts, structures, and verifies the clause-level data that underpins compliance, revenue, and governance across your entire portfolio — replacing manual PDF searches with auditable, queryable intelligence."
-        primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
-        secondaryCta={{ label: "Explore the Platform", href: "/platform" }}
-      >
-        <Image
-          src="/images/lease-extraction.svg"
-          alt="Stairpay lease extraction interface showing structured clause data alongside original PDF source text"
-          width={560}
-          height={440}
-          priority
-          className="w-full h-auto"
-        />
-      </HeroSection>
-
-      {/* ─── 2. The Problem ─── */}
-      <SectionWrapper theme="light">
-        <Container>
-          <div className="max-w-[720px]">
-            <p className="text-eyebrow text-[var(--color-accent)] mb-6">
-              THE OPERATIONAL REALITY
-            </p>
-            <h2 className="text-h2 text-[var(--color-text-dark)] mb-8">
-              Lease Data Is the Foundation. And It Is Broken.
-            </h2>
-            <div className="space-y-5 text-body text-[var(--color-text-body)]">
-              <p>
-                Shared ownership lease data sits trapped across disconnected systems — scanned
-                PDFs in document management platforms, summary fields in housing management
-                systems, and spreadsheet workarounds maintained by individuals who understand
-                the portfolio through institutional memory rather than structured data. When
-                a solicitor raises an enquiry about a staircasing cap or a rent review
-                mechanism, the answer requires someone to locate the correct PDF, read through
-                dozens of pages of legal text, and manually interpret bespoke clauses that
-                vary from lease to lease.
+        {/* ─── 2. Two-column intro ─── */}
+        <SectionWrapper theme="light">
+          <Container>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <p className="text-subheading text-[var(--color-text-dark)]">
+                Automation is allowing organisations all over the world to
+                improve their services and better their products.
               </p>
-              <p>
-                Compliance teams spend weeks preparing for audits because there is no single
-                source of truth for lease obligations. Service charge apportionment clauses
-                are understood differently by different teams. Rent review mechanisms — RPI,
-                CPI, RPI+0.5%, fixed uplifts — are tracked in spreadsheets that no one fully
-                trusts. The governance risk is not hypothetical: it is the daily operational
-                reality for every housing association managing a shared ownership portfolio
-                at scale.
-              </p>
-              <p>
-                The root cause is structural. Every shared ownership lease is a bespoke legal
-                document, with clauses governing staircasing caps, rent review mechanisms,
-                service charge obligations, and subletting restrictions that differ not just
-                between developments but between individual units. No generic document
-                management system was designed to extract and structure this level of
-                clause-level variation. Until now, the only option has been manual
-                interpretation — which does not scale, cannot be audited consistently, and
-                creates organisational risk that compounds with every new unit added to
-                the portfolio.
+              <p className="text-subheading text-[var(--color-text-body)]">
+                Cornerstone allows you to build and maintain the foundational
+                data and pipelines to empower your organisation.
               </p>
             </div>
+          </Container>
+        </SectionWrapper>
+
+        {/* ─── 3. Capability overview ─── */}
+        <CapabilityOverview />
+
+        {/* ─── 4. Five numbered detail blocks (split-scroll) ─── */}
+        <SectionWrapper theme="dark" className="relative overflow-clip">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[var(--color-accent)] opacity-[0.06] blur-[160px]" />
           </div>
-        </Container>
-      </SectionWrapper>
+          <div className="px-8 md:px-16 lg:px-24">
+            <div className="space-y-40 md:space-y-52">
+              {detailBlocks.map((block) => (
+                <div key={block.number} className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16">
+                  {/* Left — sticky number + heading */}
+                  <div className="lg:sticky lg:top-[80px] lg:self-start">
+                    <div className="text-h2 text-[var(--color-text-muted)] font-[300]">
+                      {block.number}
+                    </div>
+                    <h3 className="mt-4 text-[var(--color-text-primary)]" style={{ fontSize: 56, fontWeight: 300, letterSpacing: "-0.5px", lineHeight: 1.1 }}>
+                      <TypeWriter text={block.heading} speed={12} />
+                    </h3>
+                  </div>
 
-      {/* ─── 3. The Stairpay Approach ─── */}
-      <SectionWrapper theme="dark">
-        <ApproachSection
-          eyebrow="THE STAIRPAY APPROACH"
-          headline="From Unstructured Documents to Governed Data"
-          items={[
-            {
-              title: "Clause Extraction",
-              description:
-                "Reads lease PDFs and extracts structured data fields — rent review mechanisms, staircasing caps, service charge obligations, subletting restrictions — with every output linked to the original source text for verification.",
-              icon: <ScanSearch className="w-6 h-6" />,
-            },
-            {
-              title: "Human-in-the-Loop Verification",
-              description:
-                "Every extracted clause is traceable to the original PDF text, reviewable by your team, and audit-logged. No black-box interpretations. The system provides confidence scores and flags ambiguous clauses for human review.",
-              icon: <UserCheck className="w-6 h-6" />,
-            },
-            {
-              title: "Portfolio Compliance Scoring",
-              description:
-                "Continuous monitoring across all leases for compliance gaps, missing data fields, and inconsistencies. Surfaces risks before they become liabilities — whether that is an incorrectly applied rent review or a missing staircasing restriction.",
-              icon: <ShieldCheck className="w-6 h-6" />,
-            },
-            {
-              title: "Structured Query Resolution",
-              description:
-                "Solicitor and homeowner enquiries resolved from structured data rather than manual PDF searches. Standard queries — rent review basis, staircasing eligibility, service charge apportionment — answered in minutes with source-text references.",
-              icon: <MessageSquareText className="w-6 h-6" />,
-            },
-          ]}
-        />
-      </SectionWrapper>
+                  {/* Right — intro + detail panel, aligned with heading */}
+                  <div className="lg:pt-[52px]">
+                    <p className="text-[20px] font-[300] leading-[1.6] text-[var(--color-text-primary)]">
+                      {block.intro}
+                    </p>
 
-      {/* ─── 4. Inside the Platform ─── */}
-      <SectionWrapper theme="light">
-        <ContentSection
-          eyebrow="INSIDE THE PLATFORM"
-          headline="Structured Lease Data with Full Traceability"
-          body="The extraction interface presents structured clause data alongside the original PDF source text. Every field — from rent review type to staircasing cap percentage — links directly to the clause it was derived from. Compliance teams can verify interpretations without returning to the original document, and audit trails capture every review decision. The result is lease intelligence that your organisation can trust at governance level."
-          image="/images/lease-extraction.svg"
-          imageAlt="Stairpay lease extraction panel showing structured fields mapped to original PDF clauses"
-          theme="light"
-        />
-      </SectionWrapper>
-
-      {/* ─── 5. Enterprise Outcomes ─── */}
-      <SectionWrapper theme="white">
-        <Container>
-          <div className="max-w-[680px] mx-auto text-center mb-16">
-            <p className="text-eyebrow text-[var(--color-accent)] mb-6">
-              ENTERPRISE OUTCOMES
-            </p>
-            <h2 className="text-h2 text-[var(--color-text-dark)]">
-              Measurable Impact Across Cost, Risk, and Scale
-            </h2>
+                    <div className="mt-8 rounded-[12px] border border-white/[0.08] bg-[#1A1A1A] p-8">
+                      {block.subs.map((sub, i) => (
+                        <div key={sub.title}>
+                          {i > 0 && <div className="h-px bg-white/[0.06] my-8" />}
+                          <h4 className="text-[20px] font-[500] text-[var(--color-text-primary)]">
+                            {sub.title}
+                          </h4>
+                          <p className="text-subheading mt-3 text-[var(--color-text-secondary)]">
+                            {sub.body}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </Container>
-        <OutcomesGrid
-          outcomes={{
-            costReduction: [
-              "Consultant and external adviser dependency reduced through self-service structured data",
-              "Audit preparation time reduced from weeks to hours with pre-structured compliance outputs",
-              "Solicitor enquiry resolution costs eliminated through automated query responses",
-            ],
-            riskMitigation: [
-              "Compliance gaps identified proactively through continuous portfolio-wide monitoring",
-              "Every output traceable to original PDF source text — no unverifiable interpretations",
-              "Audit-logged verification decisions provide defensible governance evidence",
-            ],
-            scalability: [
-              "Solicitor and homeowner queries resolved in minutes rather than days",
-              "Portfolio growth absorbed without proportional headcount increases",
-              "New leases onboarded and structured within the same governance framework",
-            ],
-          }}
+        </SectionWrapper>
+
+        {/* ─── 5. Document Extraction ─── */}
+        <DocumentExtraction />
+
+        {/* ─── 6. Final CTA ─── */}
+        <CTABlock
+          headline="Ready to see Homeownership in action?"
+          description="Book a 30-minute demo with our team. We'll show you how Stairpay can transform the way your organisation manages shared ownership."
+          primaryCta={{ label: "Book a Demo", href: "/contact" }}
+          secondaryCta={{ label: "Download Overview", href: "#" }}
+          theme="dark"
         />
-      </SectionWrapper>
-
-      {/* ─── 6. Metrics ─── */}
-      <SectionWrapper theme="darker">
-        <MetricCalloutGrid
-          metrics={[
-            { value: "85%", label: "Reduction in Audit Prep Time" },
-            { value: "3min", label: "Average Query Resolution" },
-            { value: "100%", label: "Source-Text Traceability" },
-            { value: "£340K", label: "Annual Savings per Provider" },
-          ]}
-        />
-      </SectionWrapper>
-
-      {/* ─── 7. Part of the Operating System ─── */}
-      <SectionWrapper theme="dark">
-        <Container>
-          <div className="max-w-[680px] mx-auto text-center mb-16">
-            <p className="text-eyebrow text-[var(--color-accent-pale)] mb-6">
-              PART OF THE OPERATING SYSTEM
-            </p>
-            <h2 className="text-h2 text-[var(--color-text-primary)]">
-              Lease Intelligence Powers Every Other Layer
-            </h2>
-            <p className="text-body text-[var(--color-text-secondary)] mt-5">
-              Structured lease data flows into sales, staircasing, rent setting, and
-              portfolio reporting — ensuring every downstream decision is grounded in
-              verified, clause-level intelligence.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <IntelligenceLayerCard
-              icon={<TrendingUp className="w-6 h-6" />}
-              title="Sales Intelligence"
-              description="Lease terms inform affordability assessments and reservation workflows, ensuring buyers understand their obligations before exchange."
-              href="/intelligence-layers/sales"
-            />
-            <IntelligenceLayerCard
-              icon={<BarChart3 className="w-6 h-6" />}
-              title="Aftersales & Staircasing"
-              description="Staircasing caps, eligibility criteria, and lease restrictions are surfaced automatically during readiness scoring and transaction processing."
-              href="/intelligence-layers/aftersales"
-            />
-            <IntelligenceLayerCard
-              icon={<PieChart className="w-6 h-6" />}
-              title="Portfolio Intelligence"
-              description="Aggregate lease compliance data feeds board-level dashboards, providing governance visibility across the entire shared ownership portfolio."
-              href="/intelligence-layers/portfolio"
-            />
-          </div>
-        </Container>
-      </SectionWrapper>
-
-      {/* ─── 8. CTA ─── */}
-      <CTABlock
-        eyebrow="GET STARTED"
-        headline="See How Lease Intelligence Transforms Your Portfolio"
-        description="Book a strategic review with our team. We will walk through how Stairpay extracts and structures your lease data, and where the highest-value governance improvements lie."
-        ctaLabel="Book a Strategic Review"
-        ctaHref="/contact"
-        theme="dark"
-      />
-
+      </main>
       <Footer />
     </>
   );
