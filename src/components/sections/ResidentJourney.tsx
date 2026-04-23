@@ -77,11 +77,14 @@ function generateMainPath(index: number): string {
 
   // ── Zone 2 (300–600): Cornerstone — helix or horizontal ──
   if (isHelix) {
-    const amplitude = 18;
+    const maxAmplitude = 18;
     const phase = index === 4 ? Math.PI : 0;
     const samples = 60;
     for (let i = 1; i <= samples; i++) {
       const t = i / samples;
+      // Envelope: starts small, swells in the middle, shrinks at end
+      const envelope = Math.sin(t * Math.PI);
+      const amplitude = maxAmplitude * envelope;
       const x = z2Start + t * (z2End - z2Start);
       const y =
         BUNDLE_Y +

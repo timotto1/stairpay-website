@@ -145,8 +145,7 @@ export default function DirectorHomeownershipPage() {
       <CTABlock
         headline="See How Stairpay Supports Homeownership Governance"
         description="Book a strategic review with our team. We will walk through how Stairpay maps to your portfolio obligations and where structured intelligence can reduce your operational exposure."
-        ctaLabel="Book a Strategic Review"
-        ctaHref="/contact"
+        primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
         theme="dark"
       />
 

@@ -36,6 +36,7 @@ export default function HomePage() {
       <HeroSection
         headline="End-to-End Infrastructure Built for Shared Ownership"
         description=""
+        centered
         videoSources={[
           "/videos/istockphoto-1346887239-640_adpp_is.mp4",
           "/videos/istockphoto-1780339786-640_adpp_is.mp4",
@@ -144,6 +145,7 @@ export default function HomePage() {
         description="Book a strategic review with our team. We will walk through how Stairpay maps to your organisation's Shared Ownership operations and where the highest-value opportunities lie."
         primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
         theme="dark"
+        primaryOpensContactPanel
       />
 
       <Footer />

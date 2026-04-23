@@ -37,7 +37,7 @@ export function StatementBanner({ children, theme = "light" }: StatementBannerPr
       ref={ref}
       data-theme={isDark ? "dark" : "light"}
       className={`pt-24 md:pt-32 pb-12 md:pb-16 ${
-        isDark ? "bg-[var(--color-bg-primary)]" : "bg-[var(--color-bg-white)]"
+        isDark ? "bg-[var(--color-bg-primary)] blueprint-grid" : "bg-[var(--color-bg-white)]"
       }`}
     >
       <Container>

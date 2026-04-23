@@ -39,7 +39,7 @@ export default function AboutPage() {
         headline="Building Infrastructure for Shared Ownership"
         description="Stairpay exists because Shared Ownership has never had the infrastructure it deserves. We are building the data foundation, intelligence layers, and operational tooling that UK housing associations need to manage the tenure at scale — with the rigour it demands."
         primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
-        secondaryCta={{ label: "Meet the Team", href: "/company/leadership" }}
+        secondaryCta={{ label: "Contact Us", href: "/contact" }}
       />
 
       {/* ─── Our Story ─── */}
@@ -148,8 +148,7 @@ export default function AboutPage() {
       <CTABlock
         headline="Learn How Stairpay Can Support Your Organisation"
         description="Book a strategic review with our team. We will walk through how Stairpay's infrastructure maps to your Shared Ownership operations and where the highest-value opportunities lie."
-        ctaLabel="Book a Strategic Review"
-        ctaHref="/contact"
+        primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
         theme="dark"
       />
 

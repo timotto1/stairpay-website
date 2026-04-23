@@ -2,7 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { fadeUp, stagger, viewport } from "@/lib/animations";
@@ -25,6 +25,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export function ProductShowcase({ products }: ProductShowcaseProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const handleClick = useCallback((idx: number) => {
     setExpandedIndex((prev) => {
@@ -178,21 +179,20 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
                           {/* "Learn more" link — visible when expanded */}
                           <AnimatePresence>
                             {isExpanded && (
-                              <motion.div
+                              <motion.button
+                                type="button"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0, transition: { duration: 0 } }}
                                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-                                className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-10"
+                                className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20 px-3 py-2 text-[13px] font-[500] tracking-wide uppercase text-[#26045D] hover:text-[var(--color-accent)] transition-colors duration-150 cursor-pointer bg-transparent border-0"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  router.push(product.href);
+                                }}
                               >
-                                <Link
-                                  href={product.href}
-                                  className="text-[13px] font-[500] tracking-wide uppercase text-[#26045D] hover:text-[var(--color-accent)] transition-colors duration-150"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  Learn more &rarr;
-                                </Link>
-                              </motion.div>
+                                Learn more &rarr;
+                              </motion.button>
                             )}
                           </AnimatePresence>
 

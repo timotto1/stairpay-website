@@ -39,7 +39,7 @@ export function VisionBanner() {
           <p className="mt-5 max-w-[420px] text-[15px] md:text-[16px] font-[400] leading-[1.6] text-[var(--color-text-body-light)]">
             Our vision is a single source of truth for every shared ownership home — where every event is audited, every obligation is met, and residents are genuinely cared for.
           </p>
-          <Button variant="outline" size="md" href="/company/customers" arrow className="mt-8">
+          <Button variant="outline" size="md" href="/company/about" arrow className="mt-8">
             Learn More
           </Button>
         </motion.div>

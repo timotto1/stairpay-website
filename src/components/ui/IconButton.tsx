@@ -19,7 +19,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ variant = "solid-white", className = "", children, ...props }, ref) => (
     <button
       ref={ref}
-      className={`inline-flex items-center justify-center p-2 rounded-none transition-all duration-[150ms] cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111] focus-visible:ring-offset-2 ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center justify-center w-[40px] h-[40px] p-0 shrink-0 rounded-none transition-all duration-[150ms] cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111] focus-visible:ring-offset-2 ${variantClasses[variant]} ${className}`}
       {...props}
     >
       {children}

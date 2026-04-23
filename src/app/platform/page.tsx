@@ -44,7 +44,7 @@ export default function PlatformOverviewPage() {
         headline="The Operating System for Shared Ownership"
         description="Stairpay is unified infrastructure — not another point solution. Every department, every lifecycle stage, and every data source connected through a single platform purpose-built for Shared Ownership. Where other providers bolt together disconnected tools, Stairpay delivers a cohesive operating system that replaces fragmentation with structured intelligence."
         primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
-        secondaryCta={{ label: "Explore the Lifecycle", href: "/platform/lifecycle" }}
+        secondaryCta={{ label: "Explore Intelligence Layers", href: "/intelligence-layers/lease" }}
       >
         <Image
           src="/images/platform-layers.svg"
@@ -198,8 +198,7 @@ export default function PlatformOverviewPage() {
       <CTABlock
         headline="See How Everything Connects"
         description="Book a strategic review with our team. We will walk through how Stairpay's architecture maps to your organisation's Shared Ownership operations and where the highest-value opportunities lie."
-        ctaLabel="Book a Strategic Review"
-        ctaHref="/contact"
+        primaryCta={{ label: "Book a Strategic Review", href: "/contact" }}
         theme="dark"
       />
 

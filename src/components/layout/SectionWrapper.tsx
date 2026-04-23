@@ -20,11 +20,13 @@ export function SectionWrapper({
   className = "",
   id,
 }: SectionWrapperProps) {
+  const isDark = theme === "dark" || theme === "darker";
+
   return (
     <section
       id={id}
-      data-theme={theme === "dark" || theme === "darker" ? "dark" : "light"}
-      className={`py-20 md:py-[100px] ${themes[theme]} ${className}`}
+      data-theme={isDark ? "dark" : "light"}
+      className={`py-20 md:py-[100px] ${themes[theme]} ${isDark ? "blueprint-grid" : ""} ${className}`}
     >
       {children}
     </section>

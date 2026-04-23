@@ -38,7 +38,7 @@ interface CTAProps {
 
 interface HeroSectionProps {
   eyebrow?: string;
-  headline: string;
+  headline: React.ReactNode;
   description: string;
   primaryCta?: CTAProps;
   secondaryCta?: CTAProps;
@@ -47,6 +47,7 @@ interface HeroSectionProps {
   centered?: boolean;
   videoSources?: string[];
   logoTicker?: string[];
+  decoration?: React.ReactNode;
 }
 
 export function HeroSection({
@@ -60,17 +61,18 @@ export function HeroSection({
   centered = false,
   videoSources,
   logoTicker,
+  decoration,
 }: HeroSectionProps) {
   const isDark = theme === "dark";
   const hasVisual = !!children;
   const hasVideo = videoSources && videoSources.length > 0;
-  const isCentered = centered || !hasVisual || hasVideo;
+  const isCentered = centered ?? (!hasVisual || hasVideo);
 
   return (
     <section
       data-theme={isDark ? "dark" : "light"}
       className={`relative min-h-[100vh] flex items-center overflow-hidden ${
-        isDark ? "bg-[var(--color-bg-primary)]" : "bg-[var(--color-bg-surface)]"
+        isDark ? "bg-[var(--color-bg-primary)] blueprint-grid" : "bg-[var(--color-bg-surface)]"
       }`}
     >
       {/* Video background — fixed so it stays while content scrolls over */}
@@ -102,6 +104,13 @@ export function HeroSection({
         </div>
       )}
 
+      {/* Optional background decoration (e.g. grid travellers) */}
+      {decoration && (
+        <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden" aria-hidden="true">
+          {decoration}
+        </div>
+      )}
+
       <Container className="relative z-10 py-24 md:py-32">
         <div
           className={
@@ -126,7 +135,7 @@ export function HeroSection({
 
             {hasVideo ? (
               <h1
-                className={`text-[clamp(24px,4.2vw,72px)] font-[300] tracking-[-2px] leading-[1.05] text-white/90 whitespace-nowrap ${eyebrow ? "mt-6" : ""}`}
+                className={`text-[clamp(24px,4.2vw,72px)] font-[300] tracking-[-2px] leading-[1.05] text-white/90 ${eyebrow ? "mt-6" : ""}`}
               >
                 <span className="block overflow-hidden">
                   <motion.span variants={phraseVariant(0)} className="block">
@@ -139,7 +148,7 @@ export function HeroSection({
                   </motion.span>
                 </span>
               </h1>
-            ) : (
+            ) : typeof headline === "string" ? (
               <motion.h1
                 variants={heroFadeUp}
                 className={`text-display ${eyebrow ? "mt-6" : ""} ${
@@ -150,19 +159,32 @@ export function HeroSection({
               >
                 {headline}
               </motion.h1>
+            ) : (
+              <h1
+                className={`text-display ${eyebrow ? "mt-6" : ""} ${
+                  isDark
+                    ? "text-[var(--color-text-primary)]"
+                    : "text-[var(--color-text-dark)]"
+                }`}
+              >
+                {headline}
+              </h1>
             )}
+
 
             {description && (
               <motion.p
                 variants={heroFadeUp}
-                className={`text-subheading mt-6 max-w-[540px] ${
-                  isCentered ? "mx-auto" : ""
+                className={`text-subheading mt-6 ${
+                  isCentered ? "max-w-[540px] mx-auto" : "max-w-[440px] font-[300] text-white/80"
                 } ${
-                  hasVideo
-                    ? "text-white/80"
-                    : isDark
-                      ? "text-[var(--color-text-secondary)]"
-                      : "text-[var(--color-text-body)]"
+                  isCentered
+                    ? hasVideo
+                      ? "text-white/80"
+                      : isDark
+                        ? "text-[var(--color-text-secondary)]"
+                        : "text-[var(--color-text-body)]"
+                    : ""
                 }`}
               >
                 {description}
@@ -197,6 +219,7 @@ export function HeroSection({
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
               viewport={viewport}
+              className="lg:overflow-visible"
             >
               {children}
             </motion.div>

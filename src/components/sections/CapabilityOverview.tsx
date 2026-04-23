@@ -1,11 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import {
   FileSearch,
   RefreshCw,
   ShieldCheck,
   Workflow,
   ClipboardCheck,
+  ArrowUpRight,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { TypeWriter } from "@/components/ui/TypeWriter";
@@ -37,6 +39,15 @@ export function CapabilityOverview() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="flex justify-end mt-12">
+          <Link
+            href="#"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--color-border-light)] rounded-full text-[14px] font-medium text-[var(--color-text-dark)] hover:bg-[var(--color-text-dark)] hover:text-white transition-colors duration-200"
+          >
+            Download our thesis
+            <ArrowUpRight size={16} strokeWidth={1.5} />
+          </Link>
         </div>
       </div>
     </SectionWrapper>
