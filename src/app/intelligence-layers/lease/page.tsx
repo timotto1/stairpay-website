@@ -6,16 +6,16 @@ import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CTABlock } from "@/components/sections/CTABlock";
 import { Badge } from "@/components/ui/Badge";
-import { CornerstoneHeroVisual } from "@/components/visuals/CornerstoneHeroVisual";
+import { ComplianceHeroVisual } from "@/components/visuals/ComplianceHeroVisual";
 import { GridTravellers } from "@/components/visuals/GridTraveller";
 import { CapabilityOverview } from "@/components/sections/CapabilityOverview";
 import { TypeWriter } from "@/components/ui/TypeWriter";
 import { DocumentExtraction } from "@/components/sections/DocumentExtraction";
 
 export const metadata: Metadata = {
-  title: "Stairpay Cornerstone — Your Living System of Record",
+  title: "Stairpay Compliance — Your Living System of Record",
   description:
-    "Cornerstone allows you to build and maintain the foundational data and pipelines to empower your organisation.",
+    "Compliance allows you to build and maintain the foundational data and pipelines to empower your organisation.",
 };
 
 
@@ -23,11 +23,11 @@ const detailBlocks = [
   {
     number: "01",
     heading: "Clean messy data",
-    intro: "Cornerstone ingests historical records and normalises them against your data model — no matter the format. What used to take weeks of manual reconciliation becomes a structured, repeatable process.",
+    intro: "Compliance ingests historical records and normalises them against your data model — no matter the format. What used to take weeks of manual reconciliation becomes a structured, repeatable process.",
     subs: [
       {
         title: "Legacy ingestion",
-        body: "Shared ownership portfolios carry years of data in inconsistent formats, missing fields, and information locked in PDFs and scanned documents. Cornerstone processes these records automatically and maps them to your data model.",
+        body: "Shared ownership portfolios carry years of data in inconsistent formats, missing fields, and information locked in PDFs and scanned documents. Compliance processes these records automatically and maps them to your data model.",
       },
       {
         title: "Anomaly detection",
@@ -42,7 +42,7 @@ const detailBlocks = [
     subs: [
       {
         title: "Event-driven updates",
-        body: "Cornerstone connects directly to the events that trigger changes — staircasing transactions, valuations, resident moves. When something happens, every dependent field updates together, in real time.",
+        body: "Compliance connects directly to the events that trigger changes — staircasing transactions, valuations, resident moves. When something happens, every dependent field updates together, in real time.",
       },
       {
         title: "End-to-end consistency",
@@ -53,7 +53,7 @@ const detailBlocks = [
   {
     number: "03",
     heading: "Act on compliance before it's due",
-    intro: "Cornerstone tracks every compliance milestone across your portfolio and surfaces what needs attention before it becomes overdue. Your team works from a forward-looking schedule, not a reactive one.",
+    intro: "Compliance tracks every compliance milestone across your portfolio and surfaces what needs attention before it becomes overdue. Your team works from a forward-looking schedule, not a reactive one.",
     subs: [
       {
         title: "Portfolio-wide tracking",
@@ -68,7 +68,7 @@ const detailBlocks = [
   {
     number: "04",
     heading: "Automate repeated workflows",
-    intro: "Every housing association has processes that follow the same pattern hundreds of times a year. Cornerstone turns them into configurable workflows that execute consistently, every time.",
+    intro: "Every housing association has processes that follow the same pattern hundreds of times a year. Compliance turns them into configurable workflows that execute consistently, every time.",
     subs: [
       {
         title: "Configurable execution",
@@ -83,7 +83,7 @@ const detailBlocks = [
   {
     number: "05",
     heading: "Build a complete audit trail",
-    intro: "Every field change, every automated update, every manual override — logged, timestamped, and attributed. Cornerstone maintains an immutable record of what changed, when, by whom, and why.",
+    intro: "Every field change, every automated update, every manual override — logged, timestamped, and attributed. Compliance maintains an immutable record of what changed, when, by whom, and why.",
     subs: [
       {
         title: "Immutable record",
@@ -98,21 +98,21 @@ const detailBlocks = [
 ];
 
 
-export default function DataIntelligencePage() {
+export default function CompliancePage() {
   return (
     <>
       <GlobalNav />
       <main>
         {/* ─── 1. Hero ─── */}
         <HeroSection
-          eyebrow="DATA INTELLIGENCE"
+          eyebrow="COMPLIANCE"
           headline={
             <span className="relative block">
               <span className="invisible block" aria-hidden="true">Stairpay</span>
-              <span className="invisible block" aria-hidden="true">Cornerstone</span>
+              <span className="invisible block" aria-hidden="true">Compliance</span>
               <span className="absolute left-0 top-0 block">
                 <span className="block"><TypeWriter text="Stairpay" speed={12} startOnMount delay={800} /></span>
-                <span className="block"><TypeWriter text="Cornerstone" speed={12} startOnMount delay={896} /></span>
+                <span className="block"><TypeWriter text="Compliance" speed={12} startOnMount delay={896} /></span>
               </span>
             </span>
           }
@@ -122,7 +122,7 @@ export default function DataIntelligencePage() {
           centered={false}
           decoration={<GridTravellers />}
         >
-          <CornerstoneHeroVisual />
+          <ComplianceHeroVisual />
         </HeroSection>
 
         {/* ─── 2. Two-column intro ─── */}
@@ -134,7 +134,7 @@ export default function DataIntelligencePage() {
                 improve their services and better their products.
               </p>
               <p className="text-subheading text-[var(--color-text-body)]">
-                Cornerstone allows you to build and maintain the foundational
+                Compliance allows you to build and maintain the foundational
                 data and pipelines to empower your organisation.
               </p>
             </div>

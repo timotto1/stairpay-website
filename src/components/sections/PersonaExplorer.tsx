@@ -7,7 +7,7 @@ import { RotateCcw } from "lucide-react";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const teams = ["Board", "Sales", "Data Intelligence", "Finance", "Aftersales"] as const;
+const teams = ["Board", "Sales", "Compliance", "Finance", "Aftersales"] as const;
 const levels = ["C-suite", "Director", "Manager", "Senior", "Junior"] as const;
 
 type Team = (typeof teams)[number];
@@ -165,7 +165,7 @@ const responses: Record<Team, Record<Level, PersonaResponse>> = {
       ],
     },
   },
-  "Data Intelligence": {
+  "Compliance": {
     "C-suite": {
       headline: "Lease intelligence across the portfolio",
       description:

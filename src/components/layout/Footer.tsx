@@ -12,8 +12,9 @@ const footerLinks = [
     heading: "Intelligence Layers",
     links: [
       { label: "Sales", href: "/intelligence-layers/sales" },
-      { label: "Data Intelligence", href: "/intelligence-layers/lease" },
+      { label: "Compliance", href: "/intelligence-layers/lease" },
       { label: "Aftersales", href: "/intelligence-layers/aftersales" },
+      { label: "Resident Portal", href: "/intelligence-layers/resident-portal" },
       { label: "Rent & Service Charge", href: "/intelligence-layers/rent-service-charge" },
       { label: "Audit", href: "/intelligence-layers/portfolio" },
     ],
@@ -29,6 +30,7 @@ const footerLinks = [
     links: [
       { label: "About Stairpay", href: "/company/about" },
       { label: "Insights", href: "/insights" },
+      { label: "Together for Homes 2026", href: "/together-for-homes" },
       { label: "Contact", href: "/contact" },
     ],
   },

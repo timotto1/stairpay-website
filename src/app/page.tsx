@@ -81,7 +81,7 @@ export default function HomePage() {
             video: "/videos/product-1.mov",
           },
           {
-            name: "Data Intelligence",
+            name: "Compliance",
             tagline: "Documents into queryable intelligence.",
             description: "AI-powered extraction processes thousands of lease documents into structured, searchable data — surfacing key dates, clauses, and obligations so your team can act on portfolio-wide intelligence instead of reading PDFs one by one.",
             href: "/intelligence-layers/lease",

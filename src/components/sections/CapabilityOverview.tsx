@@ -26,8 +26,8 @@ export function CapabilityOverview() {
       <div className="px-8 md:px-16 lg:px-24 py-12 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 lg:gap-20 items-start">
           <h2 className="text-h2 text-[var(--color-text-dark)] whitespace-nowrap relative">
-            <span className="invisible" aria-hidden="true">Cornerstone allows you to:</span>
-            <span className="absolute left-0 top-0"><TypeWriter text="Cornerstone allows you to:" speed={12} /></span>
+            <span className="invisible" aria-hidden="true">Compliance allows you to:</span>
+            <span className="absolute left-0 top-0"><TypeWriter text="Compliance allows you to:" speed={12} /></span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {capabilities.map(({ icon: Icon, text }) => (

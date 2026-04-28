@@ -12,9 +12,10 @@ import type { Insight } from "@/lib/content/types";
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const mainNav = [
-  { label: "Data Intelligence", href: "/intelligence-layers/lease", product: true },
+  { label: "Compliance", href: "/intelligence-layers/lease", product: true },
   { label: "Aftersales", href: "/intelligence-layers/aftersales", product: true },
   { label: "Sales", href: "/intelligence-layers/sales", product: true },
+  { label: "Resident Portal", href: "/intelligence-layers/resident-portal", product: true },
   { label: "Insights", href: "/insights", product: false },
   { label: "Company", href: "/company/about", product: false },
 ];

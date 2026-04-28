@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { AnimatedUploadHeadline } from "@/components/sections/AnimatedUploadHeadline";
 import {
-  CornerstonePulseCanvas,
-  type CornerstonePulseCanvasHandle,
-} from "@/components/sections/CornerstonePulseCanvas";
+  CompliancePulseCanvas,
+  type CompliancePulseCanvasHandle,
+} from "@/components/sections/CompliancePulseCanvas";
 
 interface Particle {
   path: string;
@@ -147,15 +147,15 @@ export function DocumentExtraction() {
   const boxRefs = useRef<Array<HTMLDivElement | null>>([]);
   const bottomBoxRefs = useRef<Array<HTMLDivElement | null>>([]);
   const containerRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const cornerstoneRef = useRef<HTMLDivElement>(null);
-  const pulseCanvasRef = useRef<CornerstonePulseCanvasHandle>(null);
+  const complianceRef = useRef<HTMLDivElement>(null);
+  const pulseCanvasRef = useRef<CompliancePulseCanvasHandle>(null);
   const [particles, setParticles] = useState<Particle[]>([]);
   const [csBounds, setCsBounds] = useState<CsBounds | null>(null);
 
   useEffect(() => {
     const measure = () => {
       const grid = gridRef.current;
-      const cs = cornerstoneRef.current;
+      const cs = complianceRef.current;
       if (!grid || !cs) return;
       const gRect = grid.getBoundingClientRect();
       const csRect = cs.getBoundingClientRect();
@@ -335,10 +335,10 @@ export function DocumentExtraction() {
           <AnimatedUploadHeadline
             className="text-h2 text-white"
             sentence1="Upload anything."
-            sentence2Parts={["Cornerstone ", "reads ", "everything."]}
+            sentence2Parts={["Compliance ", "reads ", "everything."]}
           />
           <p className="text-body mt-5 text-[rgba(255,255,255,0.5)]">
-            Drop in the documents you already have — Cornerstone extracts the
+            Drop in the documents you already have — Compliance extracts the
             data that matters and structures it automatically.
           </p>
         </div>
@@ -373,14 +373,14 @@ export function DocumentExtraction() {
           ))}
 
           <div
-            ref={cornerstoneRef}
+            ref={complianceRef}
             className="relative z-[1] col-span-2 md:col-span-4 flex items-center justify-center h-14 rounded border border-[rgba(255,255,255,0.12)] bg-[#0A0A0A] text-[rgba(255,255,255,0.5)] tracking-[0.02em] text-[15px] font-medium transition-all duration-300 hover:border-[rgba(230,220,255,0.3)] hover:text-white hover:[box-shadow:0_0_8px_rgba(230,220,255,0.08)]"
           >
-            Cornerstone
+            Compliance
           </div>
 
           {csBounds && (
-            <CornerstonePulseCanvas ref={pulseCanvasRef} {...csBounds} />
+            <CompliancePulseCanvas ref={pulseCanvasRef} {...csBounds} />
           )}
 
           <svg
@@ -390,7 +390,7 @@ export function DocumentExtraction() {
           >
             <defs>
               <filter
-                id="cornerstone-glow"
+                id="compliance-glow"
                 x="-50%"
                 y="-50%"
                 width="200%"
@@ -414,10 +414,10 @@ export function DocumentExtraction() {
                   strokeWidth={layer.width}
                   strokeLinecap="round"
                   strokeOpacity={layer.opacity}
-                  filter={j === 0 ? "url(#cornerstone-glow)" : undefined}
+                  filter={j === 0 ? "url(#compliance-glow)" : undefined}
                   style={{
                     strokeDasharray: `${TRAIL_DASH} ${p.length + TRAIL_DASH + 40}`,
-                    animationName: `cornerstone-dash-${i}`,
+                    animationName: `compliance-dash-${i}`,
                     animationDuration: `${p.duration}s`,
                     animationDelay: `${p.delay + layer.delay}s`,
                     animationTimingFunction: "linear",
@@ -451,7 +451,7 @@ export function DocumentExtraction() {
       <style>{particles
         .map(
           (p, i) => `
-            @keyframes cornerstone-dash-${i} {
+            @keyframes compliance-dash-${i} {
               from { stroke-dashoffset: ${TRAIL_DASH}; }
               to   { stroke-dashoffset: ${(TRAIL_DASH - p.length).toFixed(1)}; }
             }

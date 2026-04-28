@@ -12,22 +12,22 @@ const stages = [
   {
     label: "Sales",
     href: "/intelligence-layers/sales",
-    text: "Every shared ownership scheme starts with demand. Cornerstone captures leads from multiple channels — portals, agents, housing associations, direct enquiries — and brings them into a single pipeline. No leads lost between systems, no duplicated outreach, no manual tracking.",
+    text: "Every shared ownership scheme starts with demand. Compliance captures leads from multiple channels — portals, agents, housing associations, direct enquiries — and brings them into a single pipeline. No leads lost between systems, no duplicated outreach, no manual tracking.",
   },
   {
-    label: "Cornerstone",
+    label: "Compliance",
     href: "/intelligence-layers/lease",
-    text: "This is where the resident's record comes to life. Cornerstone enriches the data — ownership percentage, lease terms, contact details, property attributes, compliance obligations — building a complete, structured profile that every downstream process can rely on.",
+    text: "This is where the resident's record comes to life. Compliance enriches the data — ownership percentage, lease terms, contact details, property attributes, compliance obligations — building a complete, structured profile that every downstream process can rely on.",
   },
   {
     label: "Staircasing",
     href: "/intelligence-layers/lease",
-    text: "Residents increase their ownership share over time. Cornerstone tracks every staircasing transaction — recalculating ownership percentages, updating rent charges, and adjusting lease terms automatically. Some residents staircase once, others multiple times, each at their own pace.",
+    text: "Residents increase their ownership share over time. Compliance tracks every staircasing transaction — recalculating ownership percentages, updating rent charges, and adjusting lease terms automatically. Some residents staircase once, others multiple times, each at their own pace.",
   },
   {
     label: "Resales",
     href: "/intelligence-layers/lease",
-    text: "When a resident is ready to move on, Cornerstone manages the resale — valuations, nominations, compliance checks, and completion. The resident leaves with full ownership and a clean record. Your team moves on to the next buyer with a property ready to re-enter the pipeline.",
+    text: "When a resident is ready to move on, Compliance manages the resale — valuations, nominations, compliance checks, and completion. The resident leaves with full ownership and a clean record. Your team moves on to the next buyer with a property ready to re-enter the pipeline.",
   },
 ];
 
@@ -36,7 +36,7 @@ const stages = [
 const SVG_W = 1200;
 const SVG_H = 300;
 
-// 4 zones: Sales → Cornerstone (helix) → Staircasing → Resales
+// 4 zones: Sales → Compliance (helix) → Staircasing → Resales
 const ZONE_BOUNDARIES = [0, 300, 600, 900, 1200];
 
 // 7 entry Y positions for sales convergence (zone 1 left edge)
@@ -75,7 +75,7 @@ function generateMainPath(index: number): string {
 
   let d = `M ${z2Start} ${BUNDLE_Y}`;
 
-  // ── Zone 2 (300–600): Cornerstone — helix or horizontal ──
+  // ── Zone 2 (300–600): Compliance — helix or horizontal ──
   if (isHelix) {
     const maxAmplitude = 18;
     const phase = index === 4 ? Math.PI : 0;
