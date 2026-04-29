@@ -12,10 +12,12 @@ import type { Insight } from "@/lib/content/types";
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const mainNav = [
-  { label: "Compliance", href: "/intelligence-layers/lease", product: true },
-  { label: "Aftersales", href: "/intelligence-layers/aftersales", product: true },
-  { label: "Sales", href: "/intelligence-layers/sales", product: true },
-  { label: "Resident Portal", href: "/intelligence-layers/resident-portal", product: true },
+  { label: "Sales", href: "/sales", product: true },
+  { label: "Compliance", href: "/compliance", product: true },
+  { label: "Aftersales", href: "/aftersales", product: true },
+  { label: "Finance", href: "/finance", product: true, soon: true },
+  { label: "Comms", href: "/comms", product: true, soon: true },
+  { label: "Resident app", href: "/resident", product: true },
   { label: "Insights", href: "/insights", product: false },
   { label: "Company", href: "/company/about", product: false },
 ];
@@ -245,6 +247,11 @@ export function GlobalNavClient({
                           <span className="w-[20px] md:w-[24px]" aria-hidden="true" />
                         )}
                         {item.label}
+                        {item.soon && (
+                          <span className="ml-2 inline-flex items-center text-[10px] font-[500] tracking-[1.5px] uppercase px-2 py-0.5 rounded-[3px] bg-[var(--color-accent-light)] text-[var(--color-accent)] leading-none">
+                            Soon
+                          </span>
+                        )}
                       </Link>
                     </motion.div>
                   ))}

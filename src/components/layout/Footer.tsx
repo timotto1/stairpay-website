@@ -9,14 +9,14 @@ const footerLinks = [
     ],
   },
   {
-    heading: "Intelligence Layers",
+    heading: "Products",
     links: [
-      { label: "Sales", href: "/intelligence-layers/sales" },
-      { label: "Compliance", href: "/intelligence-layers/lease" },
-      { label: "Aftersales", href: "/intelligence-layers/aftersales" },
-      { label: "Resident Portal", href: "/intelligence-layers/resident-portal" },
-      { label: "Rent & Service Charge", href: "/intelligence-layers/rent-service-charge" },
-      { label: "Audit", href: "/intelligence-layers/portfolio" },
+      { label: "Sales", href: "/sales" },
+      { label: "Compliance", href: "/compliance" },
+      { label: "Aftersales", href: "/aftersales" },
+      { label: "Finance", href: "/finance" },
+      { label: "Comms", href: "/comms" },
+      { label: "Resident app", href: "/resident" },
     ],
   },
   {
